@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+    <title>Atirath Holdings · Sustainability & ESG Metrics | Green Energy Leader</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #ffffff;
+            color: #1a2a2e;
+            line-height: 1.5;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        :root {
+            --green: #2E9E1F;
+            --green-dark: #1a6b12;
+            --green-light: #4abe38;
+            --green-pale: #e8f5e5;
+            --green-muted: #d4e8cf;
+            --gray-light: #f8faf7;
+            --gray-bg: #f5f7f5;
+            --gray-text: #5a6b58;
+            --dark: #1a2a2e;
+            --dark-bg: #0f2a1a;
+            --off-white: #fefef7;
+            --border-light: #e2e8e2;
+            --blue: #2c7da0;
+            --blue-light: #e8f2f5;
+            
+            --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.85rem);
+            --fs-sm: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
+            --fs-base: clamp(1rem, 0.94rem + 0.38vw, 1.15rem);
+            --fs-md: clamp(1.1rem, 1rem + 0.55vw, 1.35rem);
+            --fs-lg: clamp(1.3rem, 1.15rem + 0.9vw, 1.7rem);
+            --fs-xl: clamp(1.6rem, 1.35rem + 1.4vw, 2.3rem);
+            --fs-2xl: clamp(2rem, 1.7rem + 2vw, 3rem);
+            --fs-3xl: clamp(2.4rem, 2rem + 2.8vw, 3.8rem);
+            --fs-4xl: clamp(3rem, 2.4rem + 3.8vw, 5rem);
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(20px, 4vw, 60px);
+        }
+
+        section {
+            padding: clamp(2rem, 5vw, 4rem) 0;
+        }
+
+        .section-tag {
+            font-size: var(--fs-sm);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--green);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 32px;
+            height: 2px;
+            background: var(--green);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-3xl);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            font-size: var(--fs-md);
+            color: var(--gray-text);
+            max-width: 680px;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+              /* nav replica */
+        nav {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 5px clamp(20px, 5vw, 60px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(46, 158, 31, 0.1);
+            height: 70px;
+        }
+        .nav-logo img {
+            width: clamp(175px, 3.5vw, 46px);
+            height: auto;
+            display: block;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: var(--green);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: var(--fs-sm);
+            border: 1px solid var(--green-pale);
+            padding: 8px 18px;
+            border-radius: 40px;
+            transition: 0.2s;
+        }
+        .back-link a:hover {
+            background: var(--green-pale);
+            color: var(--green-dark);
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: var(--green);
+            font-weight: 500;
+            font-size: var(--fs-sm);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            border-radius: 40px;
+            border: 1px solid var(--green-pale);
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .back-link a:hover {
+            background: var(--green-pale);
+            border-color: var(--green);
+            transform: translateX(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f2a1a 0%, #1a4524 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 80%, rgba(46, 158, 31, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 100px;
+            padding: 0.4rem 1.2rem;
+            margin-bottom: 1.5rem;
+            font-size: var(--fs-xs);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-badge i {
+            font-size: 0.7rem;
+            color: var(--green-light);
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-4xl);
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 span {
+            color: var(--green-light);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: var(--fs-md);
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 520px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            flex: 0.8;
+            min-width: 260px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 1.2rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(46, 158, 31, 0.15);
+            border-color: var(--green-light);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-2xl);
+            font-weight: 600;
+            color: var(--green-light);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: var(--fs-xs);
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+        }
+
+        .stat-sub {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-top: 0.25rem;
+        }
+
+        /* Cards & Grids */
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 24px;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+            border-color: var(--green-pale);
+        }
+
+        .info-card-header {
+            padding: 1.5rem 1.8rem 0.5rem 1.8rem;
+            border-bottom: 2px solid var(--green-pale);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .info-card-header i {
+            font-size: 1.8rem;
+            color: var(--green);
+        }
+
+        .info-card-header h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-xl);
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 1.2rem 1.8rem 1.5rem 1.8rem;
+        }
+
+        .info-list li {
+            display: flex;
+            gap: 12px;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #f0f2ef;
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list li i {
+            color: var(--green);
+            width: 22px;
+            margin-top: 2px;
+            font-size: 0.9rem;
+        }
+
+        /* Metric Cards */
+        .metric-card {
+            background: white;
+            border-radius: 24px;
+            border: 1px solid var(--border-light);
+            padding: 1.5rem;
+            transition: all 0.2s;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        .metric-big-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-3xl);
+            font-weight: 700;
+            color: var(--green-dark);
+            line-height: 1.1;
+        }
+
+        .metric-description {
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+            margin-top: 0.5rem;
+        }
+
+        /* Methodology Box */
+        .methodology-box {
+            background: var(--gray-bg);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--green);
+        }
+
+        /* SDG Grid */
+        .sdg-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .sdg-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: all 0.2s;
+        }
+
+        .sdg-card:hover {
+            border-color: var(--green);
+            transform: translateY(-3px);
+        }
+
+        .sdg-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .sdg-card h4 {
+            font-weight: 600;
+            font-size: var(--fs-base);
+            margin-bottom: 0.5rem;
+        }
+
+        .sdg-card p {
+            font-size: var(--fs-xs);
+            color: var(--gray-text);
+        }
+
+        /* Certification Grid */
+        .cert-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .cert-badge {
+            background: white;
+            border-radius: 16px;
+            padding: 1rem 1.8rem;
+            text-align: center;
+            border: 1px solid var(--border-light);
+            min-width: 160px;
+        }
+
+        .cert-badge i {
+            font-size: 2rem;
+            color: var(--green);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-badge h4 {
+            font-weight: 600;
+            font-size: var(--fs-sm);
+        }
+
+        .cert-badge p {
+            font-size: var(--fs-xs);
+            color: var(--gray-text);
+        }
+
+        /* Metrics Bar */
+        .metrics-bar {
+            background: var(--green-pale);
+            border-radius: 24px;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .metric-item .metric-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-2xl);
+            font-weight: 600;
+            color: var(--green-dark);
+        }
+
+        .metric-item .metric-label {
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            padding: 2rem clamp(20px, 4vw, 60px);
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            text-align: center;
+            font-size: var(--fs-xs);
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .footer-content a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+        }
+
+        .footer-content a:hover {
+            color: var(--green-light);
+        }
+
+        /* WhatsApp Float */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: #25D366;
+            color: #fff;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.05);
+            background: #20b859;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .two-col-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-stats {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+     <nav>
+        <div class="nav-logo">
+            <img src="./logo.svg" alt="Atirath"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span style="font-family:'Cormorant Garamond'; font-size:1.5rem; color:var(--green); display:none;">Atirath</span>
+        </div>
+        <div class="back-link">
+            <a href="index.html#napier"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-leaf"></i>
+                    <span>ESG LEADER</span>
+                </div>
+                <h1>Sustainability & <span>ESG Metrics</span></h1>
+                <p>Atirath Holdings is committed to measurable environmental impact, social responsibility, and governance excellence. Our operations are built on a foundation of verifiable sustainability metrics.</p>
+                <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                    <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.9rem; border-radius: 40px; font-size: 0.8rem;"><i class="fas fa-cloud-sun"></i> Carbon Negative</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.9rem; border-radius: 40px; font-size: 0.8rem;"><i class="fas fa-water"></i> Water Positive</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.9rem; border-radius: 40px; font-size: 0.8rem;"><i class="fas fa-recycle"></i> Zero Waste</span>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">78%</div>
+                    <div class="stat-label">Carbon Offset</div>
+                    <div class="stat-sub">vs. fossil fuels</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">75%</div>
+                    <div class="stat-label">Water Savings</div>
+                    <div class="stat-sub">via drip irrigation</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Biomass Utilization</div>
+                    <div class="stat-sub">Zero waste model</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1,50,000+</div>
+                    <div class="stat-label">Tons CO₂/Year</div>
+                    <div class="stat-sub">avoided annually</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Carbon Offset Methodology -->
+        <section class="reveal">
+            <div class="section-tag">Climate Action</div>
+            <h2 class="section-title">Carbon Offset Calculations</h2>
+            <p class="section-subtitle">Transparent methodology behind our 78% carbon offset claim.</p>
+
+            <div class="two-col-grid">
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Offset Methodology</h3>
+                    </div>
+                    <ul class="info-list">
+                        <li><i class="fas fa-calculator"></i> <span><strong>Baseline:</strong> 1 ton CBG replaces 0.65 tons of CNG/diesel equivalent</span></li>
+                        <li><i class="fas fa-cloud-sun"></i> <span><strong>Emission Factor:</strong> Diesel: 2.68 kg CO₂/liter | CNG: 2.8 kg CO₂/kg</span></li>
+                        <li><i class="fas fa-seedling"></i> <span><strong>Biomass Sequestration:</strong> Napier Grass absorbs 8-10 tons CO₂/acre/year during growth</span></li>
+                        <li><i class="fas fa-recycle"></i> <span><strong>Biogas Carbon Intensity:</strong> 0.45 kg CO₂e/kg (vs. diesel 3.4 kg CO₂e/kg)</span></li>
+                        <li><i class="fas fa-chart-pie"></i> <span><strong>Net Offset Formula:</strong> (Fossil fuel avoided) - (Production emissions) + (Biomass sequestration)</span></li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-chart-simple"></i>
+                        <h3>Annual Impact (1,000 TPD Capacity)</h3>
+                    </div>
+                    <ul class="info-list">
+                        <li><i class="fas fa-ban"></i> <span><strong>Fossil fuel displaced:</strong> 2,50,000 tons CO₂e avoided</span></li>
+                        <li><i class="fas fa-industry"></i> <span><strong>Production emissions:</strong> 35,000 tons CO₂e (digesters, transport, compression)</span></li>
+                        <li><i class="fas fa-leaf"></i> <span><strong>Biomass sequestration:</strong> 65,000 tons CO₂e (carbon stored in roots & soil)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span><strong>Net avoided emissions:</strong> 2,80,000 tons CO₂e annually</span></li>
+                        <li><i class="fas fa-car"></i> <span><strong>Equivalent to:</strong> Removing 60,000 cars from roads/year</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="methodology-box">
+                <i class="fas fa-chart-line" style="color: var(--green); font-size: 1.5rem;"></i>
+                <strong style="font-size: var(--fs-base);">78% Carbon Offset Explained</strong>
+                <p style="margin-top: 0.5rem; color: var(--gray-text);">Our 78% carbon offset figure represents the net greenhouse gas reduction achieved when comparing CBG production and use against the fossil fuel baseline. This includes:</p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem; color: var(--gray-text);">
+                    <li>✓ Direct substitution of diesel/CNG in transportation</li>
+                    <li>✓ Carbon sequestration in Napier Grass root systems (perennial crops store carbon underground)</li>
+                    <li>✓ Avoided methane emissions from open burning of agricultural residue</li>
+                    <li>✓ Bio-slurry replacing synthetic fertilizers (reduces N₂O emissions)</li>
+                </ul>
+                <p style="margin-top: 0.75rem; font-size: var(--fs-sm);"><i class="fas fa-chart-line"></i> <strong>Methodology reference:</strong> IPCC Guidelines for National Greenhouse Gas Inventories | Verified by third-party auditor (pending certification Q3 2026)</p>
+            </div>
+        </section>
+
+        <!-- Water Conservation Metrics -->
+        <section class="reveal">
+            <div class="section-tag">Water Stewardship</div>
+            <h2 class="section-title">Water Conservation Data</h2>
+            <p class="section-subtitle">Drip irrigation and sustainable water management practices quantified.</p>
+
+            <div class="metrics-bar" style="background: var(--blue-light);">
+                <div class="metric-item">
+                    <div class="metric-number">75%</div>
+                    <div class="metric-label">Water Savings vs. Flood Irrigation</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">40%</div>
+                    <div class="metric-label">Reduction in Evaporation Losses</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">2.5 L</div>
+                    <div class="metric-label">Water per kg Biomass (vs. 10L conventional)</div>
+                </div>
+            </div>
+
+            <div class="two-col-grid">
+                <div class="metric-card">
+                    <i class="fas fa-tint" style="font-size: 2rem; color: var(--green);"></i>
+                    <div class="metric-big-number">70%</div>
+                    <div class="metric-description">Reduction in irrigation water requirement for Napier Grass using drip irrigation systems installed across partner farms</div>
+                    <div class="methodology-box" style="margin-top: 1rem; background: white;">
+                        <small><i class="fas fa-chart-simple"></i> <strong>Methodology:</strong> Comparative analysis of water meters on 50 pilot farms over 3 crop cycles. Drip irrigation (8 L/hour emitters) vs. flood irrigation (baseline).</small>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-cloud-rain" style="font-size: 2rem; color: var(--green);"></i>
+                    <div class="metric-big-number">15 Cr L</div>
+                    <div class="metric-description">Annual water savings projected at full capacity (50 plants, 30,000 acres cultivated)</div>
+                    <div class="methodology-box" style="margin-top: 1rem; background: white;">
+                        <small><i class="fas fa-chart-simple"></i> <strong>Methodology:</strong> Total cultivated area × water savings per acre (1 acre flood irrigation uses 12 lakh L/year; drip uses 3 lakh L/year).</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-header">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Additional Water Benefits</h3>
+                </div>
+                <ul class="info-list">
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Rainwater harvesting:</strong> Farm ponds installed on 500+ partner farms, capturing 2 Cr L annually</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Soil moisture retention:</strong> Mulching and organic matter increase soil water holding capacity by 25%</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Groundwater recharge:</strong> Napier Grass deep root systems (up to 2m) improve percolation and aquifer recharge</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Condensate recovery:</strong> CBG purification process recovers 80% of process water for reuse</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Waste-to-Value Metrics -->
+        <section class="reveal">
+            <div class="section-tag">Circular Economy</div>
+            <h2 class="section-title">Waste-to-Value Metrics</h2>
+            <p class="section-subtitle">Every input is utilized. Zero waste, maximum value creation.</p>
+
+            <div class="two-col-grid">
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-recycle"></i>
+                        <h3>Bio-slurry Utilization</h3>
+                    </div>
+                    <ul class="info-list">
+                        <li><i class="fas fa-chart-line"></i> <span><strong>Annual production:</strong> 2,00,000 tons of nutrient-rich bio-slurry at full capacity</span></li>
+                        <li><i class="fas fa-leaf"></i> <span><strong>NPK content:</strong> 1.2% N, 0.8% P, 1.5% K (replaces 30% of synthetic fertilizer requirement)</span></li>
+                        <li><i class="fas fa-tractor"></i> <span><strong>Farmer distribution:</strong> 75% returned to partner farmers free of cost</span></li>
+                        <li><i class="fas fa-chart-line"></i> <span><strong>Fertilizer replacement value:</strong> ₹15 Cr/year in input cost savings for farmers</span></li>
+                        <li><i class="fas fa-cloud-sun"></i> <span><strong>Carbon benefit:</strong> Avoided 25,000 tons CO₂e from synthetic fertilizer production</span></li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Complete Material Balance</h3>
+                    </div>
+                    <ul class="info-list">
+                        <li><i class="fas fa-seedling"></i> <span><strong>Input:</strong> 100 tons Napier Grass</span></li>
+                        <li><i class="fas fa-gas-pump"></i> <span><strong>Output 1:</strong> 25 tons CBG (energy product)</span></li>
+                        <li><i class="fas fa-seedling"></i> <span><strong>Output 2:</strong> 40 tons bio-slurry (organic fertilizer)</span></li>
+                        <li><i class="fas fa-leaf"></i> <span><strong>Output 3:</strong> 35 tons CO₂ captured for industrial use</span></li>
+                        <li><i class="fas fa-trophy"></i> <span><strong>Total utilization:</strong> 100% — Zero waste to landfill</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="methodology-box">
+                <i class="fas fa-chart-line"></i> <strong>Circular Economy Metrics:</strong>
+                <p style="margin-top: 0.5rem;">Our facility achieves <strong>97% material circularity</strong> (Ellen MacArthur Foundation methodology). All organic inputs are converted to energy or soil nutrients, with only minimal packaging waste (<3%) sent for recycling.</p>
+            </div>
+        </section>
+
+        <!-- UN SDG Alignment -->
+        <section class="reveal">
+            <div class="section-tag">Global Goals</div>
+            <h2 class="section-title">Alignment with UN Sustainable Development Goals</h2>
+            <p class="section-subtitle">Atirath Holdings contributes directly to 8 of the 17 SDGs.</p>
+
+            <div class="sdg-grid">
+                <div class="sdg-card">
+                    <div class="sdg-icon">🎯</div>
+                    <h4>SDG 7</h4>
+                    <p>Affordable & Clean Energy — Producing renewable CBG for transportation and cooking</p>
+                </div>
+                <div class="sdg-card">
+                    <div class="sdg-icon">💼</div>
+                    <h4>SDG 8</h4>
+                    <p>Decent Work & Economic Growth — 10,000+ rural jobs created</p>
+                </div>
+                <div class="sdg-card">
+                    <div class="sdg-icon">🌍</div>
+                    <h4>SDG 13</h4>
+                    <p>Climate Action — 1,50,000+ tons CO₂ avoided annually</p>
+                </div>
+                <div class="sdg-card">
+                    <div class="sdg-icon">💧</div>
+                    <h4>SDG 6</h4>
+                    <p>Clean Water & Sanitation — 75% water savings via drip irrigation</p>
+                </div>
+                <div class="sdg-card">
+                    <div class="sdg-icon">🌾</div>
+                    <h4>SDG 2</h4>
+                    <p>Zero Hunger — Bio-slurry improves soil health, increases food crop yields by 20%</p>
+                </div>
+                <div class="sdg-card">
+                    <div class="sdg-icon">🏭</div>
+                    <h4>SDG 9</h4>
+                    <p>Industry & Innovation — Greenfield CBG infrastructure and R&D</p>
+                </div>
+                <div class="sdg-card">
+                    <div class="sdg-icon">🤝</div>
+                    <h4>SDG 17</h4>
+                    <p>Partnerships for Goals — Collaboration with IOCL, state governments, and farmer collectives</p>
+                </div>
+                <div class="sdg-card">
+                    <div class="sdg-icon">⚡</div>
+                    <h4>SDG 12</h4>
+                    <p>Responsible Consumption — Zero-waste circular economy model</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Third-Party Certifications & Audits -->
+        <section class="reveal">
+            <div class="section-tag">Verified Impact</div>
+            <h2 class="section-title">Third-Party Certifications & Audits</h2>
+            <p class="section-subtitle">Independent verification of our sustainability claims.</p>
+
+            <div class="cert-grid">
+                <div class="cert-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <h4>ISO 14001:2015</h4>
+                    <p>Environmental Management System<br><small>Certification in progress (Q3 2026)</small></p>
+                </div>
+                <div class="cert-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <h4>ISO 50001:2018</h4>
+                    <p>Energy Management System<br><small>Certification in progress (Q4 2026)</small></p>
+                </div>
+                <div class="cert-badge">
+                    <i class="fas fa-certificate"></i>
+                    <h4>GRI Standards</h4>
+                    <p>ESG Reporting Framework<br><small>First report due Q1 2027</small></p>
+                </div>
+                <div class="cert-badge">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Green Rating</h4>
+                    <p>IGBC Green Factory Rating<br><small>Platinum target</small></p>
+                </div>
+                <div class="cert-badge">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>SATAT Certified</h4>
+                    <p>Govt. of India Scheme<br><small>Approved entrepreneur</small></p>
+                </div>
+            </div>
+
+            <div class="info-card" style="margin-top: 1rem;">
+                <div class="info-card-header">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>Audit & Verification Status</h3>
+                </div>
+                <ul class="info-list">
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Environmental Clearance:</strong> PCB Telangana & Andhra Pradesh (2026)</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span><strong>SATAT Compliance:</strong> MoU with IOCL, technical specifications verified</span></li>
+                    <li><i class="fas fa-clock"></i> <span><strong>Carbon Footprint Audit:</strong> Third-party verification by DNV (scheduled Q2 2027)</span></li>
+                    <li><i class="fas fa-clock"></i> <span><strong>Water Footprint Assessment:</strong> Alliance for Water Stewardship (AWS) certification target 2027</span></li>
+                    <li><i class="fas fa-chart-line"></i> <span><strong>Annual ESG Report:</strong> First GRI-compliant report releasing January 2027</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ESG Summary Metrics -->
+        <div class="metrics-bar reveal">
+            <div class="metric-item">
+                <div class="metric-number">78%</div>
+                <div class="metric-label">Carbon Offset</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-number">75%</div>
+                <div class="metric-label">Water Savings</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-number">100%</div>
+                <div class="metric-label">Biomass Utilization</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-number">8/17</div>
+                <div class="metric-label">UN SDGs Addressed</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-number">3+</div>
+                <div class="metric-label">Certifications In Progress</div>
+            </div>
+        </div>
+
+        <!-- ESG Commitment Statement -->
+        <div class="quote-block" style="background: var(--gray-bg); text-align: center; margin: 2rem 0;">
+            <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--green);"></i>
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: var(--fs-lg); max-width: 800px; margin: 1rem auto;">"Our ESG framework is not just about reporting — it's about measurable, verifiable impact. Every metric we track is independently verified, and we commit to continuous improvement in our environmental and social performance."</p>
+            <div style="margin-top: 0.5rem;">— Atirath Sustainability Council</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 <strong>Atirath Holdings India Limited</strong> · ESG & Sustainability Report · <a href="#">GRI Index</a> · <a href="#">Contact ESG Team</a></p>
+            <p style="margin-top: 0.5rem;">Verifiable Impact · Transparent Metrics · Sustainable Future</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919553774933?text=Hello%20Atirath%2C%20I'm%20interested%20in%20learning%20more%20about%20your%20ESG%20metrics%20and%20sustainability%20reporting." class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Reveal Animation -->
+    <script>
+        (function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.08 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        })();
+    </script>
+</body>
+</html>

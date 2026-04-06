@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+    <title>Atirath Holdings India Limited | Company Details & Official Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #ffffff;
+            color: #1a2a2e;
+            line-height: 1.5;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        :root {
+            --green: #2E9E1F;
+            --green-dark: #1a6b12;
+            --green-light: #4abe38;
+            --green-pale: #e8f5e5;
+            --green-muted: #d4e8cf;
+            --gray-light: #f8faf7;
+            --gray-bg: #f5f7f5;
+            --gray-text: #5a6b58;
+            --dark: #1a2a2e;
+            --dark-bg: #0f2a1a;
+            --off-white: #fefef7;
+            --border-light: #e2e8e2;
+            
+            --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.85rem);
+            --fs-sm: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
+            --fs-base: clamp(1rem, 0.94rem + 0.38vw, 1.15rem);
+            --fs-md: clamp(1.1rem, 1rem + 0.55vw, 1.35rem);
+            --fs-lg: clamp(1.3rem, 1.15rem + 0.9vw, 1.7rem);
+            --fs-xl: clamp(1.6rem, 1.35rem + 1.4vw, 2.3rem);
+            --fs-2xl: clamp(2rem, 1.7rem + 2vw, 3rem);
+            --fs-3xl: clamp(2.4rem, 2rem + 2.8vw, 3.8rem);
+            --fs-4xl: clamp(3rem, 2.4rem + 3.8vw, 5rem);
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(20px, 4vw, 60px);
+        }
+
+        section {
+            padding: clamp(2rem, 5vw, 4rem) 0;
+        }
+
+        .section-tag {
+            font-size: var(--fs-sm);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--green);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 32px;
+            height: 2px;
+            background: var(--green);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-3xl);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            font-size: var(--fs-md);
+            color: var(--gray-text);
+            max-width: 680px;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* nav replica */
+        nav {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 5px clamp(20px, 5vw, 60px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(46, 158, 31, 0.1);
+            height: 70px;
+        }
+        .nav-logo img {
+            width: clamp(175px, 3.5vw, 46px);
+            height: auto;
+            display: block;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: var(--green);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: var(--fs-sm);
+            border: 1px solid var(--green-pale);
+            padding: 8px 18px;
+            border-radius: 40px;
+            transition: 0.2s;
+        }
+        .back-link a:hover {
+            background: var(--green-pale);
+            color: var(--green-dark);
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: var(--green);
+            font-weight: 500;
+            font-size: var(--fs-sm);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            border-radius: 40px;
+            border: 1px solid var(--green-pale);
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .back-link a:hover {
+            background: var(--green-pale);
+            border-color: var(--green);
+            transform: translateX(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f2a1a 0%, #1a4524 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 80%, rgba(46, 158, 31, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 100px;
+            padding: 0.4rem 1.2rem;
+            margin-bottom: 1.5rem;
+            font-size: var(--fs-xs);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-badge i {
+            font-size: 0.7rem;
+            color: var(--green-light);
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-4xl);
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 span {
+            color: var(--green-light);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: var(--fs-md);
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 520px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            flex: 0.8;
+            min-width: 260px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 1.2rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(46, 158, 31, 0.15);
+            border-color: var(--green-light);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-2xl);
+            font-weight: 600;
+            color: var(--green-light);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: var(--fs-xs);
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+        }
+
+        .stat-sub {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-top: 0.25rem;
+        }
+
+        /* Cards & Grids */
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 24px;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+            border-color: var(--green-pale);
+        }
+
+        .info-card-header {
+            padding: 1.5rem 1.8rem 0.5rem 1.8rem;
+            border-bottom: 2px solid var(--green-pale);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .info-card-header i {
+            font-size: 1.8rem;
+            color: var(--green);
+        }
+
+        .info-card-header h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-xl);
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 1.2rem 1.8rem 1.5rem 1.8rem;
+        }
+
+        .info-list li {
+            display: flex;
+            gap: 12px;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #f0f2ef;
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list li i {
+            color: var(--green);
+            width: 22px;
+            margin-top: 2px;
+            font-size: 0.9rem;
+        }
+
+        /* MOU Cards */
+        .mou-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: space-between;
+            margin: 1.5rem 0;
+        }
+
+        .mou-card {
+            flex: 1;
+            min-width: 240px;
+            border-radius: 1.2rem;
+            padding: 1.5rem;
+            transition: all 0.2s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .mou-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .mou-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0.75rem 0 0.5rem 0;
+        }
+
+        .stat-big {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--green-dark);
+            line-height: 1.2;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: all 0.2s;
+        }
+
+        .feature-item:hover {
+            border-color: var(--green);
+            box-shadow: 0 8px 20px rgba(46, 158, 31, 0.08);
+        }
+
+        .feature-item i {
+            font-size: 2.2rem;
+            color: var(--green);
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-item h4 {
+            font-weight: 600;
+            font-size: var(--fs-base);
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .feature-item p {
+            font-size: var(--fs-xs);
+            color: var(--gray-text);
+        }
+
+        /* Quote Block */
+        .quote-block {
+            background: var(--gray-bg);
+            border-radius: 32px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 2rem 0;
+            border-left: 4px solid var(--green);
+        }
+
+        .quote-block i {
+            font-size: 2.5rem;
+            color: var(--green);
+            opacity: 0.5;
+            margin-bottom: 1rem;
+        }
+
+        .quote-block p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-xl);
+            font-weight: 400;
+            color: var(--dark);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+
+        /* Metrics Bar */
+        .metrics-bar {
+            background: var(--green-pale);
+            border-radius: 24px;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .metric-item .metric-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-2xl);
+            font-weight: 600;
+            color: var(--green-dark);
+        }
+
+        .metric-item .metric-label {
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            padding: 2rem clamp(20px, 4vw, 60px);
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            text-align: center;
+            font-size: var(--fs-xs);
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .footer-content a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+        }
+
+        .footer-content a:hover {
+            color: var(--green-light);
+        }
+
+        /* WhatsApp Float */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: #25D366;
+            color: #fff;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.05);
+            background: #20b859;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .two-col-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-stats {
+                width: 100%;
+            }
+            .mou-grid {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <img src="./logo.svg" alt="Atirath"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span style="font-family:'Cormorant Garamond'; font-size:1.5rem; color:var(--green); display:none;">Atirath</span>
+        </div>
+        <div class="back-link">
+            <a href="index.html#napier"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-building"></i>
+                    <span>PUBLIC LIMITED COMPANY</span>
+                </div>
+                <h1>Atirath Holdings <span>India Limited</span></h1>
+                <p>Clean energy · CBG infrastructure · Rural empowerment — Transforming agricultural biomass into sustainable fuel across India.</p>
+                <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                    <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.9rem; border-radius: 40px; font-size: 0.8rem;"><i class="fas fa-calendar-alt"></i> Incorporated: 30 July 2025</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.9rem; border-radius: 40px; font-size: 0.8rem;"><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana</span>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">₹8,000+ Cr</div>
+                    <div class="stat-label">Total Investment</div>
+                    <div class="stat-sub">Committed across 2 states</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">CBG Plants</div>
+                    <div class="stat-sub">Planned by 2028</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Rural Jobs</div>
+                    <div class="stat-sub">Direct & indirect</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1,000+</div>
+                    <div class="stat-label">TPD Capacity</div>
+                    <div class="stat-sub">Target by 2027</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Two column core info -->
+        <section class="reveal">
+            <div class="section-tag">Corporate Profile</div>
+            <h2 class="section-title">Company Overview</h2>
+            <p class="section-subtitle">Atirath Holdings India Limited is a forward-thinking energy company committed to building India's clean fuel infrastructure through innovative bio-gas solutions.</p>
+
+            <div class="two-col-grid">
+                <!-- Corporate identity & registration -->
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-building"></i>
+                        <h3>Corporate Identity</h3>
+                    </div>
+                    <ul class="info-list">
+                        <li><i class="fas fa-file-alt"></i> <span><strong>Company CIN:</strong> U40106TG2025PLC192134</span></li>
+                        <li><i class="fas fa-calendar-check"></i> <span><strong>Date of Incorporation:</strong> July 30, 2025</span></li>
+                        <li><i class="fas fa-rupee-sign"></i> <span><strong>Authorized Capital:</strong> ₹10,00,000 (₹10 Lakh)</span></li>
+                        <li><i class="fas fa-chart-line"></i> <span><strong>Company Status:</strong> Active · Under development phase</span></li>
+                        <li><i class="fas fa-map-pin"></i> <span><strong>Registered Office:</strong> 5th Floor, Jyothi Elegance, Guttala Begumpet, Kavuri Hills, Madhapur, Hyderabad – 500081</span></li>
+                    </ul>
+                </div>
+
+                <!-- Key people & board of directors -->
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-users"></i>
+                        <h3>Board of Directors</h3>
+                    </div>
+                    <ul class="info-list">
+                        <li><i class="fas fa-user-circle"></i> <span><strong>Balakrishnan Ramachandran</strong> — Director (Promoter category)</span></li>
+                        <li><i class="fas fa-user-circle"></i> <span><strong>Phani Sumanth Sarvabhatla</strong> — Director</span></li>
+                        <li><i class="fas fa-user-circle"></i> <span><strong>Rajendra Prasad Nookella</strong> — Director</span></li>
+                        <li><i class="fas fa-user-circle"></i> <span><strong>Srinivas Reddy Gaddam</strong> — Director</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- State-level mega MoUs & expansion -->
+        <section class="reveal">
+            <div class="section-tag">Strategic Partnerships</div>
+            <h2 class="section-title">MoUs with State Governments</h2>
+            <p class="section-subtitle">Large-scale commitments to build CBG infrastructure across South India under the SATAT initiative.</p>
+
+            <div class="mou-grid">
+                <div class="mou-card" style="background: #E8F0E8;">
+                    <i class="fas fa-map-pin" style="color: #2c6e2c; font-size: 1.8rem;"></i>
+                    <h3>Andhra Pradesh</h3>
+                    <div class="stat-big">₹4,000 Cr</div>
+                    <div style="font-size: 0.9rem;">investment · 25 CBG plants (20 TPD each)</div>
+                    <div style="margin-top: 0.8rem;"><i class="fas fa-calendar-check"></i> MoU signed: November 2025</div>
+                    <div><i class="fas fa-tractor"></i> Feedstock: Napier Grass based model</div>
+                </div>
+                <div class="mou-card" style="background: #E8F0E8;">
+                    <i class="fas fa-map-pin" style="color: #2c6e2c; font-size: 1.8rem;"></i>
+                    <h3>Telangana</h3>
+                    <div class="stat-big">₹4,000 Cr</div>
+                    <div style="font-size: 0.9rem;">investment · 25 CBG plants (20 TPD each)</div>
+                    <div style="margin-top: 0.8rem;"><i class="fas fa-calendar-check"></i> MoU signed: January 2026</div>
+                    <div><i class="fas fa-seedling"></i> Agro-waste & energy crop integration</div>
+                </div>
+                <div class="mou-card" style="background: #e6f0e6;">
+                    <i class="fas fa-chart-simple" style="font-size: 1.8rem; color: var(--green);"></i>
+                    <div class="stat-big">50+ plants planned</div>
+                    <div>Combined across two states</div>
+                    <div style="margin-top: 0.8rem;"><i class="fas fa-users"></i> 10,000+ projected rural jobs</div>
+                </div>
+            </div>
+
+            <div class="quote-block" style="margin-top: 0.5rem;">
+                <i class="fas fa-handshake"></i>
+                <p>Both MoUs focus on Compressed Bio Gas (CBG) under the Government of India's SATAT initiative, with land, feedstock support, and offtake agreements through OMCs.</p>
+            </div>
+        </section>
+
+        <!-- Projects, financial & operational highlights -->
+        <div class="two-col-grid reveal">
+            <div class="info-card">
+                <div class="info-card-header">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Flagship Project & Milestones</h3>
+                </div>
+                <ul class="info-list">
+                    <li><i class="fas fa-hard-hat"></i> <span><strong>First CBG Phase‑1:</strong> Foundation completed (Q1 2026) · Telangana cluster</span></li>
+                    <li><i class="fas fa-seedling"></i> <span><strong>Feedstock model:</strong> Napier Grass cultivation on 50+ acres (scalable to 2,000+ acres)</span></li>
+                    <li><i class="fas fa-handshake"></i> <span><strong>IOCL partnership:</strong> MoU signed under SATAT scheme · long-term offtake</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Environmental clearance:</strong> PCB clearance granted (Telangana State Pollution Control Board)</span></li>
+                    <li><i class="fas fa-chart-line"></i> <span><strong>Investment raised:</strong> ₹80 Cr secured for initial expansion (equity/debt mix)</span></li>
+                    <li><i class="fas fa-trophy"></i> <span><strong>Green Energy Pioneer award:</strong> Recognised for innovation in bio-CBG and rural upliftment (2026)</span></li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-header">
+                    <i class="fas fa-charging-station"></i>
+                    <h3>CBG Capacity & Impact Targets</h3>
+                </div>
+                <ul class="info-list">
+                    <li><i class="fas fa-industry"></i> <span><strong>Phase-1 capacity (per plant):</strong> 20 Tonnes Per Day (TPD) CBG</span></li>
+                    <li><i class="fas fa-tractor"></i> <span><strong>Biomass processing per plant:</strong> ~120 TPD agri residue / energy grass</span></li>
+                    <li><i class="fas fa-chart-simple"></i> <span><strong>Total planned capacity by 2028:</strong> 1,000+ TPD (across Telangana & Andhra clusters)</span></li>
+                    <li><i class="fas fa-users"></i> <span><strong>Direct + indirect employment:</strong> 500+ per plant cluster · 10,000+ statewide</span></li>
+                    <li><i class="fas fa-cloud-sun"></i> <span><strong>Estimated annual CO₂ offset:</strong> ~1,50,000 tons (when fully ramped)</span></li>
+                    <li><i class="fas fa-rupee-sign"></i> <span><strong>Farmer income multiplier:</strong> 2x – 3x via Napier grass contract farming</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SATAT & CBG sector alignment -->
+        <section class="reveal">
+            <div class="section-tag">National Alignment</div>
+            <h2 class="section-title">SATAT Scheme & CBG Ecosystem</h2>
+            <p class="section-subtitle">Aligned with India's ambitious clean fuel roadmap and government initiatives.</p>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>SATAT Initiative</h4>
+                    <p>5,000 CBG plants target by 2030 · Guaranteed offtake with OMCs</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-percent"></i>
+                    <h4>CBG Blending Obligation</h4>
+                    <p>1% blending (FY25-26) → 5% by FY28-29 · Guaranteed demand</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-industry"></i>
+                    <h4>National Progress</h4>
+                    <p>133 plants commissioned (926 TPD) · 83 under construction</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-globe"></i>
+                    <h4>Market Potential</h4>
+                    <p>₹5,000+ Cr expected investment (2026-27) · $3–4 Bn market</p>
+                </div>
+            </div>
+
+            <div class="metrics-bar">
+                <div class="metric-item">
+                    <div class="metric-number">926 TPD</div>
+                    <div class="metric-label">Commissioned CBG Capacity</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">83</div>
+                    <div class="metric-label">Plants Under Construction</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">5,000</div>
+                    <div class="metric-label">SATAT Target Plants</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">90 BCM</div>
+                    <div class="metric-label">Annual CBG Potential</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Official contacts & verification note -->
+        <div class="quote-block" style="background: var(--gray-bg); text-align: left;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+                <div>
+                    <i class="fas fa-envelope" style="font-size: 1.5rem; color: var(--green);"></i>
+                    <h4 style="margin: 0.5rem 0 0.25rem;">Official Contact</h4>
+                    <p style="font-family: 'DM Sans'; font-size: var(--fs-sm);">info@atirathholdings.com<br>+91 9396699222</p>
+                </div>
+                <div>
+                    <i class="fas fa-building" style="font-size: 1.5rem; color: var(--green);"></i>
+                    <h4 style="margin: 0.5rem 0 0.25rem;">Registered Address</h4>
+                    <p style="font-family: 'DM Sans'; font-size: var(--fs-sm);">5th Floor, Jyothi Elegance, Kavuri Hills, Madhapur, Hyderabad - 500081</p>
+                </div>
+                <div>
+                    <i class="fas fa-file-alt" style="font-size: 1.5rem; color: var(--green);"></i>
+                    <h4 style="margin: 0.5rem 0 0.25rem;">MCA Verification</h4>
+                    <p style="font-family: 'DM Sans'; font-size: var(--fs-sm);">CIN: U40106TG2025PLC192134<br>Incorporation: 30 July 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0 3rem; font-size: var(--fs-xs); color: #8a9a86;">
+            <i class="fas fa-database"></i> Information compiled from Ministry of Corporate Affairs (MCA), state government press releases, and official project disclosures.
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 <strong>Atirath Holdings India Limited</strong> · Clean Energy for India · <a href="#">Privacy</a> · <a href="#">Contact</a></p>
+            <p style="margin-top: 0.5rem;">Powering India with Nature's Own Energy</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919553774933?text=Hello%20Atirath%20Holdings%2C%20I'm%20interested%20in%20learning%20more%20about%20your%20company." class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Reveal Animation -->
+    <script>
+        (function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.08 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        })();
+    </script>
+</body>
+</html>

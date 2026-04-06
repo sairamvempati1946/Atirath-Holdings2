@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+    <title>Atirath Holdings · Farmer Partnership Program | Napier Grass Cultivation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #ffffff;
+            color: #1a2a2e;
+            line-height: 1.5;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        :root {
+            --green: #2E9E1F;
+            --green-dark: #1a6b12;
+            --green-light: #4abe38;
+            --green-pale: #e8f5e5;
+            --green-muted: #d4e8cf;
+            --gray-light: #f8faf7;
+            --gray-bg: #f5f7f5;
+            --gray-text: #5a6b58;
+            --dark: #1a2a2e;
+            --dark-bg: #0f2a1a;
+            --off-white: #fefef7;
+            --border-light: #e2e8e2;
+            --orange: #f5a623;
+            --orange-light: #fff4e6;
+            
+            --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.85rem);
+            --fs-sm: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
+            --fs-base: clamp(1rem, 0.94rem + 0.38vw, 1.15rem);
+            --fs-md: clamp(1.1rem, 1rem + 0.55vw, 1.35rem);
+            --fs-lg: clamp(1.3rem, 1.15rem + 0.9vw, 1.7rem);
+            --fs-xl: clamp(1.6rem, 1.35rem + 1.4vw, 2.3rem);
+            --fs-2xl: clamp(2rem, 1.7rem + 2vw, 3rem);
+            --fs-3xl: clamp(2.4rem, 2rem + 2.8vw, 3.8rem);
+            --fs-4xl: clamp(3rem, 2.4rem + 3.8vw, 5rem);
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(20px, 4vw, 60px);
+        }
+
+        section {
+            padding: clamp(2rem, 5vw, 4rem) 0;
+        }
+
+        .section-tag {
+            font-size: var(--fs-sm);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--green);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 32px;
+            height: 2px;
+            background: var(--green);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-3xl);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            font-size: var(--fs-md);
+            color: var(--gray-text);
+            max-width: 680px;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+              /* nav replica */
+        nav {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 5px clamp(20px, 5vw, 60px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(46, 158, 31, 0.1);
+            height: 70px;
+        }
+        .nav-logo img {
+            width: clamp(175px, 3.5vw, 46px);
+            height: auto;
+            display: block;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: var(--green);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: var(--fs-sm);
+            border: 1px solid var(--green-pale);
+            padding: 8px 18px;
+            border-radius: 40px;
+            transition: 0.2s;
+        }
+        .back-link a:hover {
+            background: var(--green-pale);
+            color: var(--green-dark);
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: var(--green);
+            font-weight: 500;
+            font-size: var(--fs-sm);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            border-radius: 40px;
+            border: 1px solid var(--green-pale);
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .back-link a:hover {
+            background: var(--green-pale);
+            border-color: var(--green);
+            transform: translateX(-2px);
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f2a1a 0%, #1a4524 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 80%, rgba(46, 158, 31, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 100px;
+            padding: 0.4rem 1.2rem;
+            margin-bottom: 1.5rem;
+            font-size: var(--fs-xs);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-badge i {
+            font-size: 0.7rem;
+            color: var(--green-light);
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-4xl);
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 span {
+            color: var(--green-light);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: var(--fs-md);
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 520px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            flex: 0.8;
+            min-width: 260px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 1.2rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(46, 158, 31, 0.15);
+            border-color: var(--green-light);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-2xl);
+            font-weight: 600;
+            color: var(--green-light);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: var(--fs-xs);
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+        }
+
+        .stat-sub {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-top: 0.25rem;
+        }
+
+        /* Cards & Grids */
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 24px;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+            border-color: var(--green-pale);
+        }
+
+        .info-card-header {
+            padding: 1.5rem 1.8rem 0.5rem 1.8rem;
+            border-bottom: 2px solid var(--green-pale);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .info-card-header i {
+            font-size: 1.8rem;
+            color: var(--green);
+        }
+
+        .info-card-header h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-xl);
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 1.2rem 1.8rem 1.5rem 1.8rem;
+        }
+
+        .info-list li {
+            display: flex;
+            gap: 12px;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #f0f2ef;
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list li i {
+            color: var(--green);
+            width: 22px;
+            margin-top: 2px;
+            font-size: 0.9rem;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            background: white;
+            border-radius: 20px;
+            padding: 1.8rem;
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: all 0.2s;
+        }
+
+        .feature-item:hover {
+            border-color: var(--green);
+            box-shadow: 0 8px 20px rgba(46, 158, 31, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h4 {
+            font-weight: 600;
+            font-size: var(--fs-base);
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .feature-item p {
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+            line-height: 1.5;
+        }
+
+        /* Revenue Model Card */
+        .revenue-card {
+            background: linear-gradient(135deg, var(--green-pale), #ffffff);
+            border-radius: 28px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--green-muted);
+        }
+
+        .revenue-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .revenue-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .revenue-item .amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-2xl);
+            font-weight: 700;
+            color: var(--green-dark);
+        }
+
+        .revenue-item .desc {
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+        }
+
+        /* Testimonial Cards */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .testimonial-card {
+            background: var(--gray-bg);
+            border-radius: 24px;
+            padding: 1.8rem;
+            border: 1px solid var(--border-light);
+            transition: all 0.2s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-card i.fa-quote-left {
+            font-size: 2rem;
+            color: var(--green);
+            opacity: 0.3;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: var(--fs-base);
+            line-height: 1.6;
+            color: var(--dark);
+            margin-bottom: 1.2rem;
+            font-style: italic;
+        }
+
+        .farmer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-top: 1px solid var(--border-light);
+            padding-top: 1rem;
+        }
+
+        .farmer-info i {
+            font-size: 2rem;
+            color: var(--green);
+        }
+
+        .farmer-info h4 {
+            font-weight: 600;
+            font-size: var(--fs-base);
+        }
+
+        .farmer-info p {
+            font-size: var(--fs-xs);
+            color: var(--gray-text);
+        }
+
+        /* Form Styles */
+        .form-container {
+            background: white;
+            border-radius: 28px;
+            border: 1px solid var(--border-light);
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-size: var(--fs-sm);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: var(--fs-sm);
+            transition: all 0.2s;
+            background: var(--gray-light);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(46, 158, 31, 0.1);
+            background: white;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .btn-submit {
+            background: var(--green);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: var(--fs-base);
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 100%;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .btn-submit:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(46, 158, 31, 0.3);
+        }
+
+        .form-note {
+            font-size: var(--fs-xs);
+            color: var(--gray-text);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Metrics Bar */
+        .metrics-bar {
+            background: var(--green-pale);
+            border-radius: 24px;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .metric-item .metric-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-2xl);
+            font-weight: 600;
+            color: var(--green-dark);
+        }
+
+        .metric-item .metric-label {
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            padding: 2rem clamp(20px, 4vw, 60px);
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            text-align: center;
+            font-size: var(--fs-xs);
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .footer-content a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+        }
+
+        .footer-content a:hover {
+            color: var(--green-light);
+        }
+
+        /* WhatsApp Float */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: #25D366;
+            color: #fff;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.05);
+            background: #20b859;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .two-col-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-stats {
+                width: 100%;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <div class="nav-logo">
+            <img src="./logo.svg" alt="Atirath"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span style="font-family:'Cormorant Garamond'; font-size:1.5rem; color:var(--green); display:none;">Atirath</span>
+        </div>
+        <div class="back-link">
+            <a href="index.html#napier"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>GROW WITH US</span>
+                </div>
+                <h1>Farmer Partnership <span>Program</span></h1>
+                <p>Join India's green energy revolution. Cultivate Napier Grass with Atirath Holdings and transform your farmland into a sustainable source of income.</p>
+                <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                    <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.9rem; border-radius: 40px; font-size: 0.8rem;"><i class="fas fa-check-circle"></i> Guaranteed Buyback</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.9rem; border-radius: 40px; font-size: 0.8rem;"><i class="fas fa-chalkboard-user"></i> Free Training</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.9rem; border-radius: 40px; font-size: 0.8rem;"><i class="fas fa-tractor"></i> Technical Support</span>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">2,500+</div>
+                    <div class="stat-label">Farmers Enrolled</div>
+                    <div class="stat-sub">Across Telangana & AP</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30,000+</div>
+                    <div class="stat-label">Acres Under Cultivation</div>
+                    <div class="stat-sub">Expanding rapidly</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2x-3x</div>
+                    <div class="stat-label">Income Increase</div>
+                    <div class="stat-sub">Vs traditional crops</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Buyback Guarantee</div>
+                    <div class="stat-sub">Long-term contract</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Partnership Overview -->
+        <section class="reveal">
+            <div class="section-tag">How It Works</div>
+            <h2 class="section-title">Your Journey with Atirath</h2>
+            <p class="section-subtitle">A simple, transparent partnership model designed for farmer prosperity and sustainable agriculture.</p>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-file-signature"></i>
+                    <h4>1. Register & Sign</h4>
+                    <p>Fill the inquiry form or call our agronomy team. Sign a simple partnership agreement with clear terms.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-chalkboard-user"></i>
+                    <h4>2. Free Training</h4>
+                    <p>Attend on-field training sessions on Napier Grass cultivation, irrigation, and pest management.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-seedling"></i>
+                    <h4>3. Cultivation Support</h4>
+                    <p>Receive high-quality stem cuttings, drip irrigation guidance, and regular field visits from our experts.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-truck"></i>
+                    <h4>4. Harvest & Supply</h4>
+                    <p>Harvest every 60-75 days. We collect biomass directly from your farm with guaranteed pricing.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-rupee-sign"></i>
+                    <h4>5. Timely Payments</h4>
+                    <p>Get paid within 7 days of each harvest. Transparent weighing and payment system.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>6. Scale & Prosper</h4>
+                    <p>Expand your cultivated area with continued support. Many farmers double their income within 12 months.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Revenue Model -->
+        <section class="reveal">
+            <div class="section-tag">Guaranteed Returns</div>
+            <h2 class="section-title">Revenue Model & Buyback Guarantee</h2>
+            <p class="section-subtitle">Transparent, predictable income with long-term security.</p>
+
+            <div class="revenue-card">
+                <div style="text-align: center; margin-bottom: 1.5rem;">
+                    <i class="fas fa-handshake" style="font-size: 3rem; color: var(--green);"></i>
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: var(--fs-xl); margin-top: 0.5rem;">100% Buyback Guarantee</h3>
+                    <p style="color: var(--gray-text);">All Napier Grass harvested is purchased by Atirath Holdings at pre-agreed rates under a 5-year contract.</p>
+                </div>
+                <div class="revenue-grid">
+                    <div class="revenue-item">
+                        <div class="amount">₹15,000 - 25,000</div>
+                        <div class="desc">Income per acre per harvest</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="amount">3-4</div>
+                        <div class="desc">Harvests per year</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="amount">₹60,000 - 1,00,000</div>
+                        <div class="desc">Annual income per acre</div>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="amount">2x - 3x</div>
+                        <div class="desc">Higher than traditional crops</div>
+                    </div>
+                </div>
+                <div style="background: var(--green-pale); border-radius: 16px; padding: 1rem; margin-top: 1rem; text-align: center;">
+                    <i class="fas fa-file-contract"></i> <strong>Long-term contract:</strong> 5-year agreement with fixed price escalation clause | Payment within 7 days of harvest
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Support & Training -->
+        <div class="two-col-grid reveal">
+            <div class="info-card">
+                <div class="info-card-header">
+                    <i class="fas fa-chalkboard-user"></i>
+                    <h3>Free Training Programs</h3>
+                </div>
+                <ul class="info-list">
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Land preparation & soil testing</strong> — Optimal pH and nutrient management</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Planting techniques</strong> — Stem cutting propagation, spacing, and mulching</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Irrigation management</strong> — Drip system installation and water conservation</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Fertilizer application</strong> — Organic and inorganic nutrient schedules</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Pest & disease control</strong> — Integrated pest management practices</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Harvesting techniques</strong> — Optimal cutting height and timing for maximum yield</span></li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <div class="info-card-header">
+                    <i class="fas fa-headset"></i>
+                    <h3>Ongoing Technical Support</h3>
+                </div>
+                <ul class="info-list">
+                    <li><i class="fas fa-user-graduate"></i> <span><strong>Dedicated agronomy team</strong> — Regular field visits by agricultural experts</span></li>
+                    <li><i class="fas fa-phone-alt"></i> <span><strong>24/7 farmer helpline</strong> — Call +91 9396699222 for immediate assistance</span></li>
+                    <li><i class="fas fa-microphone-alt"></i> <span><strong>Monthly workshops</strong> — Knowledge sharing sessions with fellow farmers</span></li>
+                    <li><i class="fas fa-tractor"></i> <span><strong>Equipment support</strong> — Access to harvesters and choppers at subsidized rates</span></li>
+                    <li><i class="fas fa-flask"></i> <span><strong>Soil testing services</strong> — Free soil analysis before plantation</span></li>
+                    <li><i class="fas fa-seedling"></i> <span><strong>Quality planting material</strong> — High-yield Napier variety supplied at cost</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Success Stories -->
+        <section class="reveal">
+            <div class="section-tag">Real Stories</div>
+            <h2 class="section-title">Farmer Success Stories</h2>
+            <p class="section-subtitle">Hear from farmers who transformed their livelihoods with Atirath's partnership program.</p>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <div class="testimonial-text">
+                        "I used to grow cotton on my 5 acres, but unpredictable prices made it risky. With Napier Grass, I earn ₹80,000 per acre annually with guaranteed buyers. The Atirath team trained me on drip irrigation and now my yield has doubled."
+                    </div>
+                    <div class="farmer-info">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <h4>K. Ramakrishna Reddy</h4>
+                            <p>Mahabubnagar, Telangana | 5 acres enrolled since 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <div class="testimonial-text">
+                        "Napier Grass changed my life. Earlier, my 3 acres were lying fallow. Now I harvest 4 times a year and earn ₹2.4 lakh annually. The best part is the free technical support - they visit my farm every month."
+                    </div>
+                    <div class="farmer-info">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <h4>Lakshmamma</h4>
+                            <p>Nalgonda, Telangana | 3 acres enrolled since 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <div class="testimonial-text">
+                        "I was skeptical at first, but after attending the training workshop, I decided to convert 2 acres to Napier. Within 8 months, I recovered my investment. Now I'm expanding to 5 more acres with support from Atirath."
+                    </div>
+                    <div class="farmer-info">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <h4>S. Venkateswarlu</h4>
+                            <p>Guntur, Andhra Pradesh | 7 acres enrolled since 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Metrics -->
+        <div class="metrics-bar reveal">
+            <div class="metric-item">
+                <div class="metric-number">2,500+</div>
+                <div class="metric-label">Partner Farmers</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-number">30,000+</div>
+                <div class="metric-label">Acres Under Cultivation</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-number">₹150+ Cr</div>
+                <div class="metric-label">Annual Farmer Income</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-number">98%</div>
+                <div class="metric-label">Farmer Satisfaction</div>
+            </div>
+        </div>
+
+        <!-- Inquiry Form -->
+        <section class="reveal">
+            <div class="section-tag">Get Started</div>
+            <h2 class="section-title">Partner with Us Today</h2>
+            <p class="section-subtitle">Fill out the form below. Our agronomy team will contact you within 48 hours to schedule a farm visit.</p>
+
+            <div class="form-container">
+                <form id="farmerInquiryForm" action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName"><i class="fas fa-user"></i> Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone"></i> Mobile Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="10-digit mobile number">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="state"><i class="fas fa-map-marker-alt"></i> State *</label>
+                            <select id="state" name="state" required>
+                                <option value="">Select State</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="district"><i class="fas fa-location-dot"></i> District *</label>
+                            <input type="text" id="district" name="district" required placeholder="Enter district name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="landArea"><i class="fas fa-tractor"></i> Land Area (in acres) *</label>
+                            <input type="number" id="landArea" name="landArea" required placeholder="Total agricultural land">
+                        </div>
+                        <div class="form-group">
+                            <label for="irrigation"><i class="fas fa-water"></i> Irrigation Source</label>
+                            <select id="irrigation" name="irrigation">
+                                <option value="">Select</option>
+                                <option value="Borewell">Borewell</option>
+                                <option value="Open Well">Open Well</option>
+                                <option value="Canal">Canal</option>
+                                <option value="Drip">Drip Irrigation</option>
+                                <option value="Rainfed">Rainfed</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-comment"></i> Additional Information</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Tell us about your farm, crops currently grown, or any questions you have..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit"><i class="fas fa-handshake"></i> Register as Partner Farmer</button>
+                    <div class="form-note">
+                        <i class="fas fa-lock"></i> Your information is secure. We'll contact you within 48 hours.
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact Alternatives -->
+        <div class="quote-block" style="background: var(--gray-bg); text-align: center; margin: 2rem 0;">
+            <i class="fas fa-phone-alt" style="font-size: 2rem; color: var(--green);"></i>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: var(--fs-xl); margin: 0.5rem 0;">Prefer to speak with us directly?</h3>
+            <p style="font-size: var(--fs-base);">Call our Farmer Helpline: <strong>+91 9396699222</strong> | Email: <strong>farmers@atirathholdings.com</strong></p>
+            <p style="font-size: var(--fs-sm); color: var(--gray-text); margin-top: 0.5rem;">Monday - Saturday, 9:00 AM to 6:00 PM</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 <strong>Atirath Holdings India Limited</strong> · Farmer Partnership Program · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+            <p style="margin-top: 0.5rem;">Empowering farmers, powering India — Grow with Atirath</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919553774933?text=Hello%20Atirath%2C%20I'm%20interested%20in%20the%20Farmer%20Partnership%20Program.%20I%20have%20___%20acres%20of%20land%20in%20___%20district." class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Reveal Animation & Form Handling -->
+    <script>
+        // Reveal animation
+        (function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.08 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        })();
+
+        // Simple form submission handling (prevent default and show success message)
+        const form = document.getElementById('farmerInquiryForm');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your interest! Our agronomy team will contact you within 48 hours to discuss the partnership details.');
+                form.reset();
+            });
+        }
+    </script>
+</body>
+</html>

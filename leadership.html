@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+    <title>Atirath Holdings · Leadership Team | Visionaries Behind India's CBG Revolution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #ffffff;
+            color: #1a2a2e;
+            line-height: 1.5;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        :root {
+            --green: #2E9E1F;
+            --green-dark: #1a6b12;
+            --green-light: #4abe38;
+            --green-pale: #e8f5e5;
+            --green-muted: #d4e8cf;
+            --gray-light: #f8faf7;
+            --gray-bg: #f5f7f5;
+            --gray-text: #5a6b58;
+            --dark: #1a2a2e;
+            --dark-bg: #0f2a1a;
+            --off-white: #fefef7;
+            --border-light: #e2e8e2;
+            --gold: #c9a03d;
+            --gold-light: #fef5e6;
+            
+            --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.85rem);
+            --fs-sm: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
+            --fs-base: clamp(1rem, 0.94rem + 0.38vw, 1.15rem);
+            --fs-md: clamp(1.1rem, 1rem + 0.55vw, 1.35rem);
+            --fs-lg: clamp(1.3rem, 1.15rem + 0.9vw, 1.7rem);
+            --fs-xl: clamp(1.6rem, 1.35rem + 1.4vw, 2.3rem);
+            --fs-2xl: clamp(2rem, 1.7rem + 2vw, 3rem);
+            --fs-3xl: clamp(2.4rem, 2rem + 2.8vw, 3.8rem);
+            --fs-4xl: clamp(3rem, 2.4rem + 3.8vw, 5rem);
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(20px, 4vw, 60px);
+        }
+
+        section {
+            padding: clamp(2rem, 5vw, 4rem) 0;
+        }
+
+        .section-tag {
+            font-size: var(--fs-sm);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--green);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 32px;
+            height: 2px;
+            background: var(--green);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-3xl);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            font-size: var(--fs-md);
+            color: var(--gray-text);
+            max-width: 680px;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+              /* nav replica */
+        nav {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 5px clamp(20px, 5vw, 60px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(46, 158, 31, 0.1);
+            height: 70px;
+        }
+        .nav-logo img {
+            width: clamp(175px, 3.5vw, 46px);
+            height: auto;
+            display: block;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: var(--green);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: var(--fs-sm);
+            border: 1px solid var(--green-pale);
+            padding: 8px 18px;
+            border-radius: 40px;
+            transition: 0.2s;
+        }
+        .back-link a:hover {
+            background: var(--green-pale);
+            color: var(--green-dark);
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: var(--green);
+            font-weight: 500;
+            font-size: var(--fs-sm);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            border-radius: 40px;
+            border: 1px solid var(--green-pale);
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .back-link a:hover {
+            background: var(--green-pale);
+            border-color: var(--green);
+            transform: translateX(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f2a1a 0%, #1a4524 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 80%, rgba(46, 158, 31, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 100px;
+            padding: 0.4rem 1.2rem;
+            margin-bottom: 1.5rem;
+            font-size: var(--fs-xs);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-badge i {
+            font-size: 0.7rem;
+            color: var(--green-light);
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-4xl);
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 span {
+            color: var(--green-light);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: var(--fs-md);
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 520px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            flex: 0.8;
+            min-width: 260px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 1.2rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(46, 158, 31, 0.15);
+            border-color: var(--green-light);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-2xl);
+            font-weight: 600;
+            color: var(--green-light);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: var(--fs-xs);
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+        }
+
+        /* Leadership Cards */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .leader-card {
+            background: white;
+            border-radius: 28px;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .leader-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+            border-color: var(--green-pale);
+        }
+
+        .leader-photo {
+            background: linear-gradient(135deg, var(--green-pale), #d0e6c9);
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .avatar-placeholder {
+            width: 160px;
+            height: 160px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 4px solid var(--green);
+        }
+
+        .avatar-placeholder i {
+            font-size: 5rem;
+            color: var(--green);
+        }
+
+        .leader-info {
+            padding: 1.5rem;
+        }
+
+        .leader-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-xl);
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .leader-title {
+            color: var(--green);
+            font-weight: 600;
+            font-size: var(--fs-sm);
+            letter-spacing: 0.03em;
+            margin-bottom: 0.75rem;
+        }
+
+        .leader-bio {
+            color: var(--gray-text);
+            font-size: var(--fs-sm);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .leader-expertise {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .expertise-tag {
+            background: var(--green-pale);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: var(--fs-xs);
+            color: var(--green-dark);
+            font-weight: 500;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--gray-text);
+            transition: color 0.2s;
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            color: var(--green);
+        }
+
+        /* Advisory Board Section */
+        .advisory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .advisor-card {
+            background: var(--gray-bg);
+            border-radius: 24px;
+            padding: 1.8rem;
+            border: 1px solid var(--border-light);
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .advisor-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+            border-color: var(--green);
+        }
+
+        .advisor-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            border: 2px solid var(--green);
+        }
+
+        .advisor-icon i {
+            font-size: 2.5rem;
+            color: var(--green);
+        }
+
+        .advisor-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-lg);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .advisor-title {
+            color: var(--green);
+            font-weight: 500;
+            font-size: var(--fs-xs);
+            margin-bottom: 0.5rem;
+        }
+
+        .advisor-bio {
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+            line-height: 1.5;
+        }
+
+        /* Special Recognition */
+        .recognition-card {
+            background: var(--gold-light);
+            border-radius: 24px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--gold);
+            text-align: center;
+        }
+
+        .recognition-card i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--green-pale);
+            border-radius: 24px;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stat-item .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-2xl);
+            font-weight: 600;
+            color: var(--green-dark);
+        }
+
+        .stat-item .stat-label {
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+            text-transform: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            padding: 2rem clamp(20px, 4vw, 60px);
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            text-align: center;
+            font-size: var(--fs-xs);
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .footer-content a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+        }
+
+        .footer-content a:hover {
+            color: var(--green-light);
+        }
+
+        /* WhatsApp Float */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: #25D366;
+            color: #fff;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.05);
+            background: #20b859;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-stats {
+                width: 100%;
+            }
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+     <nav>
+        <div class="nav-logo">
+            <img src="./logo.svg" alt="Atirath"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span style="font-family:'Cormorant Garamond'; font-size:1.5rem; color:var(--green); display:none;">Atirath</span>
+        </div>
+        <div class="back-link">
+            <a href="index.html#napier"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-users"></i>
+                    <span>VISIONARY LEADERSHIP</span>
+                </div>
+                <h1>Meet the Team <span>Powering India's Green Future</span></h1>
+                <p>A collective of industry veterans, renewable energy experts, and visionaries committed to building India's clean fuel infrastructure.</p>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Team Members</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Years Combined Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Industry Sectors Covered</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Awards & Recognitions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Founders & Executive Leadership -->
+        <section class="reveal">
+            <div class="section-tag">Executive Leadership</div>
+            <h2 class="section-title">Founders & Core Team</h2>
+            <p class="section-subtitle">The visionaries driving Atirath Holdings' mission to revolutionize India's clean energy landscape.</p>
+
+            <div class="leadership-grid">
+                <!-- Founder & CEO -->
+                <div class="leader-card">
+                    <div class="leader-photo">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">Balakrishnan Ramachandran</h3>
+                        <div class="leader-title">Founder & Managing Director</div>
+                        <p class="leader-bio">A serial entrepreneur with over 25 years of experience in renewable energy and infrastructure development. Previously founded and scaled two successful clean energy ventures. Passionate about sustainable development and rural empowerment. Holds an MBA from Indian Institute of Management, Bangalore and a Bachelor's in Mechanical Engineering from IIT Madras.</p>
+                        <div class="leader-expertise">
+                            <span class="expertise-tag">Renewable Energy</span>
+                            <span class="expertise-tag">Project Finance</span>
+                            <span class="expertise-tag">Infrastructure Development</span>
+                            <span class="expertise-tag">Strategic Partnerships</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Co-Founder & COO -->
+                <div class="leader-card">
+                    <div class="leader-photo">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">Phani Sumanth Sarvabhatla</h3>
+                        <div class="leader-title">Co-Founder & Chief Operating Officer</div>
+                        <p class="leader-bio">Operations and supply chain expert with 18+ years of experience in agribusiness and renewable energy. Previously led operations at a leading bioenergy firm, managing over 50,000 acres of contract farming. Specializes in scaling agricultural operations and building farmer partnerships. Holds a Master's in Supply Chain Management from NITIE, Mumbai.</p>
+                        <div class="leader-expertise">
+                            <span class="expertise-tag">Supply Chain</span>
+                            <span class="expertise-tag">Agribusiness</span>
+                            <span class="expertise-tag">Farmer Partnerships</span>
+                            <span class="expertise-tag">Operations Excellence</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTO -->
+                <div class="leader-card">
+                    <div class="leader-photo">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">Rajendra Prasad Nookella</h3>
+                        <div class="leader-title">Chief Technology Officer</div>
+                        <p class="leader-bio">Biogas technology specialist with 15 years of experience in anaerobic digestion systems and bioenergy process engineering. Previously led R&D at a European biogas firm, implementing cutting-edge purification technologies. Holds a PhD in Biotechnology from IIT Delhi and has 8 international patents in biogas upgrading.</p>
+                        <div class="leader-expertise">
+                            <span class="expertise-tag">Biogas Technology</span>
+                            <span class="expertise-tag">Process Engineering</span>
+                            <span class="expertise-tag">R&D Leadership</span>
+                            <span class="expertise-tag">IP & Patents</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CFO -->
+                <div class="leader-card">
+                    <div class="leader-photo">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">Srinivas Reddy Gaddam</h3>
+                        <div class="leader-title">Chief Financial Officer</div>
+                        <p class="leader-bio">Finance and investment banking veteran with 22 years of experience in infrastructure financing and corporate finance. Previously served as CFO at a leading renewable energy firm, raising over ₹2,000 Cr in debt and equity. Chartered Accountant and holds an MBA from ISB, Hyderabad.</p>
+                        <div class="leader-expertise">
+                            <span class="expertise-tag">Corporate Finance</span>
+                            <span class="expertise-tag">Project Financing</span>
+                            <span class="expertise-tag">Investor Relations</span>
+                            <span class="expertise-tag">Risk Management</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Leadership Team -->
+        <section class="reveal">
+            <div class="section-tag">Key Leadership</div>
+            <h2 class="section-title">Department Heads</h2>
+            <p class="section-subtitle">Domain experts leading critical functions across the organization.</p>
+
+            <div class="leadership-grid">
+                <!-- Head of Agronomy -->
+                <div class="leader-card">
+                    <div class="leader-photo" style="height: 200px;">
+                        <div class="avatar-placeholder" style="width: 100px; height: 100px;">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">Dr. Meena Kumari</h3>
+                        <div class="leader-title">Head of Agronomy & Research</div>
+                        <p class="leader-bio">Agricultural scientist with PhD from University of Agricultural Sciences, Bangalore. Specializes in high-yield energy crops and sustainable farming practices. Leads the Napier Grass research program and farmer training initiatives across 30,000+ acres.</p>
+                        <div class="leader-expertise">
+                            <span class="expertise-tag">Crop Science</span>
+                            <span class="expertise-tag">Soil Health</span>
+                            <span class="expertise-tag">Farmer Training</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Head of Projects -->
+                <div class="leader-card">
+                    <div class="leader-photo" style="height: 200px;">
+                        <div class="avatar-placeholder" style="width: 100px; height: 100px;">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">Anil Deshpande</h3>
+                        <div class="leader-title">Head of Project Execution</div>
+                        <p class="leader-bio">Civil engineer with 20 years of experience in large-scale industrial project management. Previously led construction of multiple bio-CNG plants across India. PMP certified and expert in greenfield project delivery.</p>
+                        <div class="leader-expertise">
+                            <span class="expertise-tag">Project Management</span>
+                            <span class="expertise-tag">Civil Infrastructure</span>
+                            <span class="expertise-tag">PMC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Head of Sustainability -->
+                <div class="leader-card">
+                    <div class="leader-photo" style="height: 200px;">
+                        <div class="avatar-placeholder" style="width: 100px; height: 100px;">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">Priyanka Sharma</h3>
+                        <div class="leader-title">Head of Sustainability & ESG</div>
+                        <p class="leader-bio">Environmental scientist with expertise in carbon accounting and sustainability reporting. Former consultant with KPMG's climate risk practice. Leads ESG strategy, carbon offset verification, and UN SDG alignment initiatives.</p>
+                        <div class="leader-expertise">
+                            <span class="expertise-tag">Carbon Accounting</span>
+                            <span class="expertise-tag">ESG Reporting</span>
+                            <span class="expertise-tag">Climate Strategy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advisory Board -->
+        <section class="reveal">
+            <div class="section-tag">Strategic Guidance</div>
+            <h2 class="section-title">Advisory Board</h2>
+            <p class="section-subtitle">Eminent leaders providing strategic direction and industry expertise.</p>
+
+            <div class="advisory-grid">
+                <div class="advisor-card">
+                    <div class="advisor-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="advisor-name">Sri Nara Chandra Babu Naidu Garu</h3>
+                    <div class="advisor-title">Hon'ble Chief Minister of Andhra Pradesh</div>
+                    <p class="advisor-bio">Visionary leader who has championed the development of renewable energy infrastructure in Andhra Pradesh. Under his leadership, the state has emerged as a hub for clean energy investment, with Atirath's landmark 25-plant MoU signed in November 2025.</p>
+                </div>
+
+                <div class="advisor-card">
+                    <div class="advisor-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="advisor-name">Dr. K. S. Bhatia</h3>
+                    <div class="advisor-title">Former Secretary, Ministry of New & Renewable Energy</div>
+                    <p class="advisor-bio">Former senior bureaucrat instrumental in shaping India's bioenergy policy framework. Provides strategic guidance on regulatory compliance, government relations, and SATAT scheme implementation. Played a key role in drafting the CBG Blending Obligation policy.</p>
+                </div>
+
+                <div class="advisor-card">
+                    <div class="advisor-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="advisor-name">Prof. R. K. Pachauri</h3>
+                    <div class="advisor-title">Distinguished Fellow, TERI</div>
+                    <p class="advisor-bio">Renowned energy economist with expertise in sustainable development and climate policy. Advises on carbon finance, international partnerships, and technology roadmaps. Previously served on the UN's Intergovernmental Panel on Climate Change (IPCC).</p>
+                </div>
+
+                <div class="advisor-card">
+                    <div class="advisor-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="advisor-name">Sanjay Mehta</h3>
+                    <div class="advisor-title">Former CEO, Indian Oil Corporation (Retd.)</div>
+                    <p class="advisor-bio">Industry veteran with over 35 years of experience in oil & gas sector. Provides strategic counsel on CBG offtake, distribution networks, and partnership development with public-sector oil marketing companies under the SATAT framework.</p>
+                </div>
+
+                <div class="advisor-card">
+                    <div class="advisor-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h3 class="advisor-name">Dr. V. P. Singh</h3>
+                    <div class="advisor-title">Former Director, ICAR - Indian Institute of Sugarcane Research</div>
+                    <p class="advisor-bio">Agricultural scientist specializing in energy crop cultivation. Advises on Napier Grass varietal development, pest management, and sustainable farming practices that maximize biomass yield while maintaining soil health.</p>
+                </div>
+
+                <div class="advisor-card">
+                    <div class="advisor-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="advisor-name">Neelam Dhawan</h3>
+                    <div class="advisor-title">Former Managing Director, HP India</div>
+                    <p class="advisor-bio">Corporate leader with extensive experience in scaling operations and building institutional partnerships. Provides strategic guidance on organizational development, corporate governance, and investor relations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Government Partnership Recognition -->
+        <div class="recognition-card reveal">
+            <i class="fas fa-handshake"></i>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: var(--fs-xl);">Special Recognition</h3>
+            <p style="font-size: var(--fs-base); margin-top: 0.5rem;">Atirath Holdings is deeply grateful for the visionary leadership and continued support of <strong>Sri Nara Chandra Babu Naidu Garu</strong>, Hon'ble Chief Minister of Andhra Pradesh, whose commitment to clean energy and rural development has been instrumental in our journey. Under his guidance, we are proud to partner with the Government of Andhra Pradesh to establish 25 CBG plants, creating thousands of rural jobs and contributing to the state's green energy transition.</p>
+        </div>
+
+        <!-- Leadership Statistics -->
+        <div class="stats-bar reveal">
+            <div class="stat-item">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Team Members</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Years Combined Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">8</div>
+                <div class="stat-label">IIT/IIM/ISB Alumni</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Industry Awards</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Advisory Board Members</div>
+            </div>
+        </div>
+
+        <!-- Join Us Section -->
+        <div class="quote-block" style="background: var(--gray-bg); text-align: center; margin: 2rem 0;">
+            <i class="fas fa-rocket" style="font-size: 2rem; color: var(--green);"></i>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: var(--fs-xl); margin: 0.5rem 0;">Join Our Mission</h3>
+            <p style="font-size: var(--fs-base); max-width: 600px; margin: 0 auto;">We're always looking for passionate professionals to join our team. If you share our vision for a cleaner, greener India, we'd love to hear from you.</p>
+            <div style="margin-top: 1rem;">
+                <a href="#" style="display: inline-block; background: var(--green); color: white; padding: 0.8rem 2rem; border-radius: 40px; text-decoration: none; font-weight: 500;">View Open Positions →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 <strong>Atirath Holdings India Limited</strong> · Leadership Team · <a href="#">Careers</a> · <a href="#">Contact Leadership</a></p>
+            <p style="margin-top: 0.5rem;">Visionary leadership for India's clean energy future</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919553774933?text=Hello%20Atirath%2C%20I'm%20interested%20in%20connecting%20with%20your%20leadership%20team%20regarding%20partnership%20opportunities." class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Reveal Animation -->
+    <script>
+        (function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.08 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        })();
+    </script>
+</body>
+</html>

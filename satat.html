@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+    <title>Atirath Holdings · SATAT Scheme for CBG</title>
+    <!-- same fonts & fontawesome as flagship page -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* === EXACT SAME RESET, VARS, UTILITIES AS NAPIER PAGE === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #ffffff;
+            color: #0f1a0e;
+            line-height: 1.65;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        :root {
+            --green: #2E9E1F;
+            --green-dark: #1a6b12;
+            --green-light: #4abe38;
+            --green-pale: #e8f5e5;
+            --gray-light: #f0f4ef;
+            --gray-text: #5a6b58;
+            --dark: #0f1a0e;
+            --off-white: #f8faf7;
+            --fs-xs: clamp(0.78rem, 0.72rem + 0.28vw, 0.9rem);
+            --fs-sm: clamp(0.9rem, 0.84rem + 0.32vw, 1.05rem);
+            --fs-base: clamp(1rem, 0.94rem + 0.38vw, 1.2rem);
+            --fs-md: clamp(1.1rem, 1rem + 0.55vw, 1.4rem);
+            --fs-lg: clamp(1.3rem, 1.1rem + 0.9vw, 1.75rem);
+            --fs-xl: clamp(1.6rem, 1.3rem + 1.6vw, 2.4rem);
+            --fs-2xl: clamp(2rem, 1.6rem + 2.4vw, 3.2rem);
+            --fs-3xl: clamp(2.6rem, 2rem + 3.2vw, 4.6rem);
+            --fs-4xl: clamp(3.2rem, 2.4rem + 4.8vw, 6.2rem);
+            --sp-xs: clamp(0.25rem, 0.5vw, 0.5rem);
+            --sp-sm: clamp(0.5rem, 1vw, 1rem);
+            --sp-md: clamp(1rem, 2vw, 1.8rem);
+            --sp-lg: clamp(1.2rem, 3vw, 2.4rem);
+            --sp-xl: clamp(1.8rem, 4vw, 3rem);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section {
+            padding: var(--sp-lg) clamp(20px, 5vw, 64px);
+        }
+        .s-tag {
+            font-size: var(--fs-sm);
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--green);
+            font-weight: 500;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .s-tag::before {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--green);
+        }
+        .s-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-3xl);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--sp-sm);
+        }
+        .s-body {
+            font-size: var(--fs-md);
+            line-height: 1.85;
+            color: var(--gray-text);
+            font-weight: 300;
+            max-width: 720px;
+        }
+        /* nav replica */
+        nav {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 5px clamp(20px, 5vw, 60px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(46, 158, 31, 0.1);
+            height: 70px;
+        }
+        .nav-logo img {
+            width: clamp(175px, 3.5vw, 46px);
+            height: auto;
+            display: block;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: var(--green);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: var(--fs-sm);
+            border: 1px solid var(--green-pale);
+            padding: 8px 18px;
+            border-radius: 40px;
+            transition: 0.2s;
+        }
+        .back-link a:hover {
+            background: var(--green-pale);
+            color: var(--green-dark);
+        }
+
+        /* === MERGED HERO + QUICK STATS WITH POSTER IMAGE === */
+        .satat-hero-merged {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            background: var(--dark);
+            position: relative;
+            overflow: hidden;
+            padding: var(--sp-xl) clamp(20px, 5vw, 72px);
+            color: #fff;
+        }
+        .hero-grid-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image: linear-gradient(rgba(46, 158, 31, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(46, 158, 31, 0.1) 1px, transparent 1px);
+            background-size: clamp(40px, 5vw, 68px) clamp(40px, 5vw, 68px);
+        }
+        .hero-blob {
+            position: absolute;
+            right: -12%;
+            top: -12%;
+            width: 60vw;
+            height: 60vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(46, 158, 31, 0.2) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .merged-container {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--sp-lg);
+            align-items: center;
+            width: 100%;
+        }
+        .hero-text-side {
+            flex: 1 1 350px;
+            min-width: 280px;
+        }
+        .hero-poster-side {
+            flex: 1 1 400px;
+            min-width: 280px;
+        }
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 100px;
+            padding: 5px 16px;
+            margin-bottom: 20px;
+            color: var(--green-light);
+        }
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green-light);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%,100% { opacity:1; transform:scale(1); }
+            50% { opacity:0.42; transform:scale(0.8); }
+        }
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-4xl);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .hero-title .satat-em {
+            color: var(--green-light);
+            font-style: italic;
+        }
+        .hero-description {
+            font-size: var(--fs-md);
+            color: rgba(255,255,255,0.7);
+            max-width: 520px;
+        }
+
+        /* Poster Card Styling */
+        .poster-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(46,158,31,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .poster-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 50px rgba(0,0,0,0.4);
+            border-color: var(--green-light);
+        }
+        .poster-image {
+            width: 100%;
+            aspect-ratio: auto;
+            object-fit: cover;
+            display: block;
+        }
+        .poster-caption {
+            padding: 15px 20px;
+            text-align: center;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+        }
+        .poster-caption h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-lg);
+            color: var(--green-light);
+            margin-bottom: 5px;
+        }
+        .poster-caption p {
+            font-size: var(--fs-xs);
+            color: rgba(255,255,255,0.7);
+        }
+        .poster-badge {
+            display: inline-block;
+            background: var(--green);
+            color: #fff;
+            font-size: 10px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-top: 8px;
+            letter-spacing: 1px;
+        }
+
+        /* stats cards grid (right side now moved to bottom or separate - but keeping original) */
+        .stats-grid-hero {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: var(--sp-sm);
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(4px);
+            border-radius: 20px;
+            padding: var(--sp-md);
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-top: var(--sp-md);
+        }
+        .stat-card-hero {
+            background: rgba(255,255,255,0.02);
+            border-radius: 14px;
+            padding: var(--sp-sm);
+            text-align: center;
+            border: 1px solid rgba(46,158,31,0.25);
+            backdrop-filter: blur(2px);
+            transition: 0.2s;
+        }
+        .stat-card-hero:hover {
+            background: rgba(46,158,31,0.1);
+            border-color: var(--green-light);
+        }
+        .stat-number-hero {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-2xl);
+            font-weight: 600;
+            color: var(--green-light);
+            line-height: 1.2;
+        }
+        .stat-label-hero {
+            font-size: var(--fs-xs);
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .stat-sub-hero {
+            font-size: var(--fs-xs);
+            color: rgba(255,255,255,0.35);
+        }
+
+        /* === TWO COLUMN STYLES === */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--sp-lg);
+            margin: var(--sp-md) 0;
+        }
+        .info-card {
+            background: var(--off-white);
+            border-radius: 12px;
+            padding: var(--sp-lg);
+            border-left: 4px solid var(--green);
+        }
+        .info-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-xl);
+            font-weight: 600;
+            margin-bottom: var(--sp-sm);
+            color: var(--dark);
+        }
+        .info-list {
+            list-style: none;
+        }
+        .info-list li {
+            display: flex;
+            gap: 12px;
+            padding: var(--sp-xs) 0;
+            border-bottom: 1px solid rgba(46,158,31,0.1);
+            font-size: var(--fs-base);
+            color: var(--gray-text);
+        }
+        .info-list li i {
+            color: var(--green);
+            width: 24px;
+            margin-top: 3px;
+        }
+
+        /* === PROCESS STEPS === */
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--sp-md);
+            margin: var(--sp-lg) 0;
+        }
+        .step-item {
+            flex: 1 1 180px;
+            background: #fff;
+            border-radius: 40px 12px 12px 40px;
+            border: 1px solid var(--green-pale);
+            padding: var(--sp-md);
+            position: relative;
+            background: linear-gradient(135deg, #ffffff, #fafff9);
+            box-shadow: 0 5px 12px rgba(46,158,31,0.08);
+        }
+        .step-item::after {
+            content: "→";
+            position: absolute;
+            right: -18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: var(--green-light);
+            opacity: 0.5;
+            z-index: 2;
+        }
+        .step-item:last-child::after {
+            display: none;
+        }
+        .step-icon {
+            font-size: 2.2rem;
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+        .step-title {
+            font-weight: 600;
+            font-size: var(--fs-base);
+            margin-bottom: 5px;
+            color: var(--green-dark);
+        }
+        .step-desc {
+            font-size: var(--fs-xs);
+            color: var(--gray-text);
+        }
+
+        /* === TARGET CARDS === */
+        .target-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--sp-md);
+            margin: var(--sp-lg) 0;
+        }
+        .target-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: var(--sp-lg);
+            border: 1px solid var(--green-pale);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .target-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--green);
+        }
+        .target-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-2xl);
+            font-weight: 700;
+            color: var(--green);
+        }
+        .target-label {
+            font-size: var(--fs-sm);
+            font-weight: 600;
+            margin: 8px 0;
+        }
+        .target-desc {
+            font-size: var(--fs-xs);
+            color: var(--gray-text);
+        }
+
+        /* === BENEFITS SECTION === */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--sp-md);
+            margin: var(--sp-md) 0;
+        }
+        .benefit-item {
+            background: #fff;
+            border-radius: 16px;
+            padding: var(--sp-md);
+            border: 1px solid var(--green-pale);
+            text-align: center;
+        }
+        .benefit-item i {
+            font-size: 2.5rem;
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+        .benefit-title {
+            font-weight: 600;
+            font-size: var(--fs-base);
+            margin-bottom: 8px;
+            color: var(--green-dark);
+        }
+        .benefit-desc {
+            font-size: var(--fs-xs);
+            color: var(--gray-text);
+        }
+
+        /* === VISUAL BANNER === */
+        .visual-banner {
+            background: linear-gradient(130deg, #1f3b1a, #2d5524);
+            border-radius: 40px;
+            padding: var(--sp-lg);
+            margin: var(--sp-lg) 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            color: white;
+            border: 1px solid var(--green-light);
+            box-shadow: 0 15px 30px rgba(0,40,0,0.3);
+        }
+        .icon-group {
+            display: flex;
+            gap: 5px;
+            font-size: 3rem;
+            filter: drop-shadow(0 5px 5px #0f2b0a);
+        }
+        .icon-group i {
+            transition: transform 0.3s;
+        }
+        .icon-group i:hover {
+            transform: rotate(5deg) scale(1.1);
+            color: var(--green-light);
+        }
+
+        /* === FOOTER === */
+        .footer-mini {
+            background: var(--dark);
+            padding: var(--sp-md) clamp(20px, 5vw, 72px);
+            margin-top: var(--sp-lg);
+        }
+        .footer-copy {
+            font-size: var(--fs-sm);
+            color: rgba(255, 255, 255, 0.22);
+            text-align: center;
+        }
+        .footer-copy span {
+            color: var(--green-light);
+        }
+
+        /* === WHATSAPP FLOAT === */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: #25D366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .wa-float:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width:800px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+            .process-steps {
+                flex-direction: column;
+            }
+            .step-item::after {
+                content: "↓";
+                right: 50%;
+                top: auto;
+                bottom: -30px;
+                transform: translateX(50%);
+            }
+            .merged-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .wa-float {
+                width: 50px;
+                height: 50px;
+                font-size: 26px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .hero-text-side, .hero-poster-side {
+                flex: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- navigation with back link -->
+    <nav>
+        <div class="nav-logo">
+            <img src="./logo.svg" alt="Atirath"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span style="font-family:'Cormorant Garamond'; font-size:1.5rem; color:var(--green); display:none;">Atirath</span>
+        </div>
+        <div class="back-link">
+            <a href="index.html#"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- MERGED HERO WITH POSTER IMAGE -->
+    <section class="satat-hero-merged">
+        <div class="hero-grid-bg"></div>
+        <div class="hero-blob"></div>
+        <div class="merged-container">
+            <!-- left text -->
+            <div class="hero-text-side">
+                <div class="hero-tag">
+                    <span class="pulse-dot"></span>
+                    <span style="font-size:var(--fs-xs); font-weight:500; letter-spacing:0.12em;">GOVERNMENT OF INDIA</span>
+                </div>
+                <h1 class="hero-title">SATAT Scheme: <span class="satat-em">Powering India's CBG Revolution</span></h1>
+                <p class="hero-description">Sustainable Alternative Towards Affordable Transportation – A landmark initiative by Ministry of Petroleum & Natural Gas to promote Compressed Bio-Gas as a green transport fuel.</p>
+                
+                <!-- stats cards right below text on mobile -->
+                <div class="stats-grid-hero">
+                    <div class="stat-card-hero">
+                        <div class="stat-number-hero">5,000</div>
+                        <div class="stat-label-hero">CBG Plants</div>
+                        <div class="stat-sub-hero">target by 2025-26</div>
+                    </div>
+                    <div class="stat-card-hero">
+                        <div class="stat-number-hero">15</div>
+                        <div class="stat-label-hero">MMT Annual CBG</div>
+                        <div class="stat-sub-hero">production target</div>
+                    </div>
+                    <div class="stat-card-hero">
+                        <div class="stat-number-hero">₹46</div>
+                        <div class="stat-label-hero">Base Price/KG</div>
+                        <div class="stat-sub-hero">guaranteed by OMCs</div>
+                    </div>
+                    <div class="stat-card-hero">
+                        <div class="stat-number-hero">133+</div>
+                        <div class="stat-label-hero">Plants Commissioned</div>
+                        <div class="stat-sub-hero">926 TPD capacity</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- right side - POSTER IMAGE -->
+            <div class="hero-poster-side">
+                <div class="poster-card">
+                    <img class="poster-image" 
+                         src="https://www.digitalindiagov.in/wp-content/uploads/2024/01/image-25.jpg" 
+                         alt="SATAT Scheme Poster"
+                         onerror="this.src='https://placehold.co/800x450/2E9E1F/white?text=SATAT+Scheme+India'; this.onerror=null;">
+                    <div class="poster-caption">
+                        <h3>Sustainable Alternative Towards Affordable Transportation</h3>
+                        <p>Ministry of Petroleum & Natural Gas | Government of India</p>
+                        <span class="poster-badge"><i class="fas fa-gas-pump"></i> SATAT 2.0</span>
+                        <span class="poster-badge"><i class="fas fa-leaf"></i> Green Energy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Banner -->
+    <section style="padding-top:0;">
+        <div class="visual-banner">
+            <div style="font-size:var(--fs-md); font-weight:300; background:rgba(255,255,255,0.1); padding:8px 24px; border-radius:60px;">
+                <i class="fas fa-chart-line"></i>  SATAT 2.0: CBG Blending Obligation from 1% to 5% by 2028  <i class="fas fa-chart-line"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- TWO COLUMN: Overview + Key Features -->
+    <section class="reveal">
+        <div class="s-tag">Understanding SATAT</div>
+        <h2 class="s-title">What is the SATAT Scheme?</h2>
+        <div class="two-col">
+            <div class="info-card">
+                <h3><i class="fas fa-info-circle" style="color:var(--green); margin-right:8px;"></i> Scheme Overview</h3>
+                <ul class="info-list">
+                    <li><i class="fas fa-calendar-alt"></i> <span><strong>Launched:</strong> October 1, 2018 by Ministry of Petroleum & Natural Gas</span></li>
+                    <li><i class="fas fa-bullseye"></i> <span><strong>Objective:</strong> Promote CBG as a green transport fuel and reduce import dependency</span></li>
+                    <li><i class="fas fa-handshake"></i> <span><strong>Model:</strong> Entrepreneurs set up CBG plants; OMCs (IOCL, BPCL, HPCL, GAIL) purchase CBG</span></li>
+                    <li><i class="fas fa-chart-line"></i> <span><strong>Target:</strong> 5,000 CBG plants producing 15 million metric tonnes annually</span></li>
+                    <li><i class="fas fa-trophy"></i> <span><strong>Status:</strong> 133 plants commissioned, 83 under construction, 2,227 LOIs issued</span></li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3><i class="fas fa-clipboard-list" style="color:var(--green); margin-right:8px;"></i> Key Features</h3>
+                <ul class="info-list">
+                    <li><i class="fas fa-flask"></i> <span><strong>CBG Specifications:</strong> Min 90% methane, max 4% CO₂, compressed to 250 Bar</span></li>
+                    <li><i class="fas fa-rupee-sign"></i> <span><strong>Pricing:</strong> ₹46/kg base price (fixed for first 3 years from Oct 2018)</span></li>
+                    <li><i class="fas fa-building"></i> <span><strong>Plant Capacity:</strong> Minimum 2 tonnes per day (TPD) required</span></li>
+                    <li><i class="fas fa-truck"></i> <span><strong>Offtake:</strong> Guaranteed purchase by OMCs under long-term agreements</span></li>
+                    <li><i class="fas fa-certificate"></i> <span><strong>Standard:</strong> Must comply with IS 16987:2016 specifications</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARGET MILESTONES -->
+    <section class="reveal" style="background: var(--off-white);">
+        <div class="s-tag">National Targets</div>
+        <h2 class="s-title">India's CBG Ambition</h2>
+        <p class="s-body" style="margin-bottom:var(--sp-md);">SATAT scheme aims to transform India's energy landscape with ambitious milestones.</p>
+        
+        <div class="target-grid">
+            <div class="target-card">
+                <div class="target-number">5,000</div>
+                <div class="target-label">CBG Plants</div>
+                <div class="target-desc">Targeted across India by 2025-26</div>
+            </div>
+            <div class="target-card">
+                <div class="target-number">15 MMT</div>
+                <div class="target-label">Annual CBG Production</div>
+                <div class="target-desc">15 million metric tonnes per annum</div>
+            </div>
+            <div class="target-card">
+                <div class="target-number">50,000+</div>
+                <div class="target-label">Jobs Created</div>
+                <div class="target-desc">Direct & indirect employment</div>
+            </div>
+            <div class="target-card">
+                <div class="target-number">30%</div>
+                <div class="target-label">Import Reduction</div>
+                <div class="target-desc">Potential reduction in natural gas imports</div>
+            </div>
+        </div>
+
+        <!-- CBG Blending Obligation Timeline -->
+        <div style="margin-top: var(--sp-lg);">
+            <h3 style="font-family:'Cormorant Garamond'; font-size:var(--fs-xl); margin-bottom:var(--sp-sm);">CBG Blending Obligation (CBO) Roadmap</h3>
+            <div class="process-steps">
+                <div class="step-item">
+                    <div class="step-icon"><i class="fas fa-percent"></i></div>
+                    <div class="step-title">FY 2025-26</div>
+                    <div class="step-desc">1% blending in CNG/PNG</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="step-title">FY 2028-29</div>
+                    <div class="step-desc">5% blending target</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon"><i class="fas fa-flag-checkered"></i></div>
+                    <div class="step-title">2030+</div>
+                    <div class="step-desc">10% blending ambition</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOVERNMENT SUPPORT & INCENTIVES -->
+    <section class="reveal">
+        <div class="s-tag">Financial Support</div>
+        <h2 class="s-title">Government Incentives & Assistance</h2>
+        
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <i class="fas fa-money-bill-wave"></i>
+                <div class="benefit-title">Biomass Aggregation</div>
+                <div class="benefit-desc">₹564.75 crore allocated for machinery (2023-24 to 2026-27)</div>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-building"></i>
+                <div class="benefit-title">Plant Setup Support</div>
+                <div class="benefit-desc">₹1.8-9.0 crore assistance for 4 TPD plants</div>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-pipeline"></i>
+                <div class="benefit-title">Pipeline Infrastructure</div>
+                <div class="benefit-desc">₹28.75 crore per project (up to 75 km) + ₹994.50 crore total allocation</div>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-percent"></i>
+                <div class="benefit-title">GST Benefits</div>
+                <div class="benefit-desc">5% GST on CBG and 12% on compressed biogas plants</div>
+            </div>
+        </div>
+
+        <div class="two-col" style="margin-top: var(--sp-lg);">
+            <div class="info-card">
+                <h3><i class="fas fa-hand-holding-usd"></i> Financial Assistance Details</h3>
+                <ul class="info-list">
+                    <li><i class="fas fa-check"></i> <span><strong>Capital Subsidy:</strong> Up to 20% of project cost for first 100 plants</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Interest Subvention:</strong> 2% interest rebate on loans for CBG projects</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Viability Gap Funding:</strong> Available for CBG projects in aspirational districts</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Priority Sector Lending:</strong> CBG projects classified under priority sector</span></li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3><i class="fas fa-leaf"></i> Environmental Benefits</h3>
+                <ul class="info-list">
+                    <li><i class="fas fa-check"></i> <span><strong>CO₂ Reduction:</strong> 50,000 tonnes per year per 100 TPD plant</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Stubble Burning:</strong> Eliminates agricultural residue burning</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Organic Manure:</strong> Bio-slurry byproduct improves soil health</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Carbon Credits:</strong> Eligible for carbon credit trading</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS FLOW: HOW SATAT WORKS -->
+    <section class="reveal" style="background: var(--off-white);">
+        <div class="s-tag">SATAT Ecosystem</div>
+        <h2 class="s-title">How the SATAT Model Works</h2>
+        <p class="s-body" style="margin-bottom:var(--sp-md);">A seamless partnership between CBG entrepreneurs and Oil Marketing Companies.</p>
+
+        <div class="process-steps">
+            <div class="step-item">
+                <div class="step-icon"><i class="fas fa-plant-wilt"></i></div>
+                <div class="step-title">1. Feedstock Supply</div>
+                <div class="step-desc">Agricultural residue, Napier grass, cattle dung, municipal waste</div>
+            </div>
+            <div class="step-item">
+                <div class="step-icon"><i class="fas fa-industry"></i></div>
+                <div class="step-title">2. CBG Production</div>
+                <div class="step-desc">Entrepreneur sets up CBG plant with min 2 TPD capacity</div>
+            </div>
+            <div class="step-item">
+                <div class="step-icon"><i class="fas fa-flask"></i></div>
+                <div class="step-title">3. Quality Testing</div>
+                <div class="step-desc">CBG tested against IS 16987:2016 standards</div>
+            </div>
+            <div class="step-item">
+                <div class="step-icon"><i class="fas fa-truck"></i></div>
+                <div class="step-title">4. OMC Offtake</div>
+                <div class="step-desc">IOCL/BPCL/HPCL purchase at guaranteed price</div>
+            </div>
+            <div class="step-item">
+                <div class="step-icon"><i class="fas fa-gas-pump"></i></div>
+                <div class="step-title">5. Retail Distribution</div>
+                <div class="step-desc">CBG sold as green transport fuel at OMC retail outlets</div>
+            </div>
+        </div>
+
+        <!-- Additional info box -->
+        <div style="display:flex; flex-wrap:wrap; gap:var(--sp-md); margin-top: var(--sp-lg);">
+            <div style="flex:1; min-width:220px; background: #fff; border-radius:12px; padding:var(--sp-md); border:1px solid rgba(46,158,31,0.2);">
+                <span style="font-weight:600; color:var(--green-dark);"><i class="fas fa-file-signature"></i> LOI Process</span>
+                <ul style="margin-top:12px; list-style:none;">
+                    <li><i class="fas fa-arrow-right" style="color:var(--green);"></i> Submit Expression of Interest</li>
+                    <li><i class="fas fa-arrow-right" style="color:var(--green);"></i> Site feasibility assessment</li>
+                    <li><i class="fas fa-arrow-right" style="color:var(--green);"></i> Letter of Intent (LOI) issuance</li>
+                    <li><i class="fas fa-arrow-right" style="color:var(--green);"></i> Plant commissioning within 24 months</li>
+                    <li><i class="fas fa-arrow-right" style="color:var(--green);"></i> Long-term purchase agreement (15 years)</li>
+                </ul>
+            </div>
+            <div style="flex:1; min-width:200px; background: #fff; border-radius:12px; padding:var(--sp-md); border:1px solid rgba(46,158,31,0.2);">
+                <span style="font-weight:600; color:var(--green-dark);"><i class="fas fa-chart-simple"></i> Current Progress (Jan 2026)</span>
+                <div style="margin-top:12px;">
+                    <div>🏭 133 CBG plants commissioned</div>
+                    <div>📊 926 TPD total capacity</div>
+                    <div>⛽ 410 retail outlets with CBG</div>
+                    <div>📝 2,227 active LOIs</div>
+                    <div>🚧 83 plants under construction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS FOR FARMERS & ENTREPRENEURS -->
+    <section class="reveal">
+        <div class="s-tag">Stakeholder Benefits</div>
+        <h2 class="s-title">Who Benefits from SATAT?</h2>
+        
+        <div class="two-col">
+            <div class="info-card">
+                <h3><i class="fas fa-tractor"></i> For Farmers</h3>
+                <ul class="info-list">
+                    <li><i class="fas fa-check"></i> <span>Regular income from agricultural residue, cattle dung, and Napier grass</span></li>
+                    <li><i class="fas fa-check"></i> <span>Long-term supply contracts with guaranteed pricing</span></li>
+                    <li><i class="fas fa-check"></i> <span>Free organic manure (digestate) reduces fertilizer costs</span></li>
+                    <li><i class="fas fa-check"></i> <span>Eliminates stubble burning - earns carbon credits</span></li>
+                    <li><i class="fas fa-check"></i> <span>Skill development and training opportunities</span></li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3><i class="fas fa-chart-line"></i> For Entrepreneurs</h3>
+                <ul class="info-list">
+                    <li><i class="fas fa-check"></i> <span>Assured offtake at fixed price under 15-year agreements</span></li>
+                    <li><i class="fas fa-check"></i> <span>Government subsidies and viability gap funding</span></li>
+                    <li><i class="fas fa-check"></i> <span>Priority sector lending and interest subvention</span></li>
+                    <li><i class="fas fa-check"></i> <span>Carbon credit revenue stream</span></li>
+                    <li><i class="fas fa-check"></i> <span>Brand recognition as green energy pioneer</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="visual-banner" style="margin-top: var(--sp-lg);">
+            <div><i class="fas fa-quote-left" style="font-size:2rem; opacity:0.5;"></i></div>
+            <div style="text-align:center;">
+                <strong style="font-size:var(--fs-lg);">SATAT is a game-changer for India's energy security and rural economy.</strong><br>
+                <span style="font-size:var(--fs-sm);">— Ministry of Petroleum & Natural Gas</span>
+            </div>
+            <div><i class="fas fa-quote-right" style="font-size:2rem; opacity:0.5;"></i></div>
+        </div>
+    </section>
+
+    <!-- IMPACT STATISTICS -->
+    <section style="background: var(--green-pale);">
+        <div class="s-tag">Impact So Far</div>
+        <h2 class="s-title">SATAT Achievements</h2>
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-around; gap:var(--sp-md); margin-top: var(--sp-md);">
+            <div style="text-align:center;">
+                <span style="font-family:'Cormorant Garamond'; font-size:var(--fs-2xl); font-weight:700; color:var(--green-dark);">₹46/kg</span><br>
+                <span style="font-size:var(--fs-sm);">Guaranteed CBG price</span>
+            </div>
+            <div style="text-align:center;">
+                <span style="font-family:'Cormorant Garamond'; font-size:var(--fs-2xl); font-weight:700; color:var(--green-dark);">410+</span><br>
+                <span style="font-size:var(--fs-sm);">Retail outlets with CBG</span>
+            </div>
+            <div style="text-align:center;">
+                <span style="font-family:'Cormorant Garamond'; font-size:var(--fs-2xl); font-weight:700; color:var(--green-dark);">2,227</span><br>
+                <span style="font-size:var(--fs-sm);">Active LOIs issued</span>
+            </div>
+            <div style="text-align:center;">
+                <span style="font-family:'Cormorant Garamond'; font-size:var(--fs-2xl); font-weight:700; color:var(--green-dark);">83</span><br>
+                <span style="font-size:var(--fs-sm);">Plants under construction</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer-mini">
+        <div class="footer-copy">
+            © 2025 <span>Atirath Holdings India Limited</span> · SATAT Scheme · 
+            <a href="#" style="color:rgba(255,255,255,0.22); text-decoration:none;">Privacy</a> · 
+            <a href="#" style="color:rgba(255,255,255,0.22); text-decoration:none;">Contact</a>
+        </div>
+        <div class="footer-copy" style="margin-top:8px;">
+            <span>SATAT 2.0</span> — Empowering India's Green Energy Future.
+        </div>
+    </footer>
+
+    <!-- WhatsApp floating icon -->
+    <a href="https://wa.me/9396699222?text=Hello%20Atirath%20Holdings%2C%20I'm%20interested%20in%20learning%20more%20about%20SATAT%20Scheme%20for%20CBG%20projects."
+        class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- reveal observer -->
+    <script>
+        (function() {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(e => e.isIntersecting && e.target.classList.add('visible'));
+            }, { threshold: 0.07 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        })();
+    </script>
+</body>
+</html>

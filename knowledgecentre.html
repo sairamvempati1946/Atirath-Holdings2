@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+    <title>Atirath Holdings · Knowledge Center | CBG Insights & Resources</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #ffffff;
+            color: #1a2a2e;
+            line-height: 1.5;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        :root {
+            --green: #2E9E1F;
+            --green-dark: #1a6b12;
+            --green-light: #4abe38;
+            --green-pale: #e8f5e5;
+            --green-muted: #d4e8cf;
+            --gray-light: #f8faf7;
+            --gray-bg: #f5f7f5;
+            --gray-text: #5a6b58;
+            --dark: #1a2a2e;
+            --dark-bg: #0f2a1a;
+            --border-light: #e2e8e2;
+            
+            --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.85rem);
+            --fs-sm: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
+            --fs-base: clamp(1rem, 0.94rem + 0.38vw, 1.15rem);
+            --fs-md: clamp(1.1rem, 1rem + 0.55vw, 1.35rem);
+            --fs-lg: clamp(1.3rem, 1.15rem + 0.9vw, 1.7rem);
+            --fs-xl: clamp(1.6rem, 1.35rem + 1.4vw, 2.3rem);
+            --fs-2xl: clamp(2rem, 1.7rem + 2vw, 3rem);
+            --fs-3xl: clamp(2.4rem, 2rem + 2.8vw, 3.8rem);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(20px, 4vw, 60px);
+        }
+
+        section {
+            padding: clamp(2rem, 5vw, 4rem) 0;
+        }
+
+        .section-tag {
+            font-size: var(--fs-sm);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--green);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 32px;
+            height: 2px;
+            background: var(--green);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-3xl);
+            font-weight: 500;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+                     /* nav replica */
+        nav {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 5px clamp(20px, 5vw, 60px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(46, 158, 31, 0.1);
+            height: 70px;
+        }
+        .nav-logo img {
+            width: clamp(175px, 3.5vw, 46px);
+            height: auto;
+            display: block;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: var(--green);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: var(--fs-sm);
+            border: 1px solid var(--green-pale);
+            padding: 8px 18px;
+            border-radius: 40px;
+            transition: 0.2s;
+        }
+        .back-link a:hover {
+            background: var(--green-pale);
+            color: var(--green-dark);
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: var(--green);
+            font-weight: 500;
+            font-size: var(--fs-sm);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            border-radius: 40px;
+            border: 1px solid var(--green-pale);
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .back-link a:hover {
+            background: var(--green-pale);
+            border-color: var(--green);
+            transform: translateX(-2px);
+        }
+
+        /* Hero Section - Exactly as Screenshot */
+        .hero {
+            background: linear-gradient(135deg, #0f2a1a 0%, #1a4524 100%);
+            color: white;
+            position: relative;
+            padding: 4rem 0 5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: var(--green-light);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: var(--fs-md);
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Search Bar */
+        .search-wrapper {
+            max-width: 550px;
+            margin: 2rem auto 0;
+            position: relative;
+        }
+
+        .search-wrapper input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: none;
+            border-radius: 60px;
+            font-size: var(--fs-sm);
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            color: white;
+            transition: all 0.2s;
+        }
+
+        .search-wrapper input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .search-wrapper input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .search-wrapper i {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 2rem 0 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 1rem;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 0.6rem 1.6rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+            cursor: pointer;
+            border-radius: 40px;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            color: var(--green);
+        }
+
+        .tab-btn.active {
+            background: var(--green);
+            color: white;
+        }
+
+        /* Article Cards */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 24px;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .article-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
+            border-color: var(--green-pale);
+        }
+
+        .article-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .article-category-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--green);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+        }
+
+        .article-meta {
+            font-size: var(--fs-xs);
+            color: var(--gray-text);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .article-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-xl);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .article-excerpt {
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--green);
+            font-weight: 600;
+            font-size: var(--fs-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.2s;
+        }
+
+        .read-more:hover {
+            gap: 0.8rem;
+        }
+
+        /* Case Study Cards */
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .case-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .case-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
+            border-color: var(--green);
+        }
+
+        .case-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .case-content {
+            padding: 1.5rem;
+        }
+
+        .case-stats {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .case-stat {
+            background: var(--green-pale);
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: var(--fs-xs);
+            font-weight: 600;
+            color: var(--green-dark);
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
+        }
+
+        .video-thumbnail {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-thumbnail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .play-button {
+            width: 60px;
+            height: 60px;
+            background: var(--green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .play-button i {
+            font-size: 1.6rem;
+            color: white;
+            margin-left: 4px;
+        }
+
+        .video-card:hover .play-button {
+            transform: scale(1.1);
+            background: var(--green-light);
+        }
+
+        .video-info {
+            padding: 1.2rem;
+        }
+
+        /* Infographic Grid */
+        .infographic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .infographic-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.8rem;
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .infographic-card:hover {
+            border-color: var(--green);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .infographic-icon {
+            font-size: 3rem;
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .infographic-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-2xl);
+            font-weight: 700;
+            color: var(--green-dark);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            background: white;
+            border-radius: 28px;
+            overflow: auto;
+            cursor: default;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            padding: 2rem clamp(20px, 4vw, 60px);
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            text-align: center;
+            font-size: var(--fs-xs);
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .footer-content a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+        }
+
+        .footer-content a:hover {
+            color: var(--green-light);
+        }
+
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: #25D366;
+            color: #fff;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            text-decoration: none;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .wa-float:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .category-tabs {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                padding-bottom: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+     <nav>
+        <div class="nav-logo">
+            <img src="./logo.svg" alt="Atirath"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span style="font-family:'Cormorant Garamond'; font-size:1.5rem; color:var(--green); display:none;">Atirath</span>
+        </div>
+        <div class="back-link">
+            <a href="index.html#napier"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section - Exactly as Screenshot -->
+    <section class="hero">
+        <div class="container">
+            <h1>Knowledge <span>Center</span></h1>
+            <p>Insights, research, and resources on India's CBG revolution,<br>sustainable farming, and clean energy innovation.</p>
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search articles, case studies, videos...">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Category Tabs -->
+        <div class="category-tabs">
+            <button class="tab-btn active" data-category="all">All Resources</button>
+            <button class="tab-btn" data-category="articles">Articles & Insights</button>
+            <button class="tab-btn" data-category="case-studies">Case Studies</button>
+            <button class="tab-btn" data-category="videos">Videos</button>
+            <button class="tab-btn" data-category="infographics">Infographics</button>
+        </div>
+
+        <!-- Articles Section -->
+        <div id="articles-section" class="content-section" data-category="articles">
+            <div class="section-tag">Thought Leadership</div>
+            <h2 class="section-title">Latest Articles & Insights</h2>
+            <div class="articles-grid" id="articlesGrid"></div>
+        </div>
+
+        <!-- Case Studies Section -->
+        <div id="case-studies-section" class="content-section" data-category="case-studies" style="display: none;">
+            <div class="section-tag">Field Stories</div>
+            <h2 class="section-title">Napier Grass Case Studies</h2>
+            <div class="case-grid" id="caseGrid"></div>
+        </div>
+
+        <!-- Videos Section -->
+        <div id="videos-section" class="content-section" data-category="videos" style="display: none;">
+            <div class="section-tag">Visual Learning</div>
+            <h2 class="section-title">Process Videos & Explainers</h2>
+            <div class="video-grid" id="videoGrid"></div>
+        </div>
+
+        <!-- Infographics Section -->
+        <div id="infographics-section" class="content-section" data-category="infographics" style="display: none;">
+            <div class="section-tag">Data Visualized</div>
+            <h2 class="section-title">Environmental Impact Infographics</h2>
+            <div class="infographic-grid" id="infographicGrid"></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <div id="modalContent" class="modal-content"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 <strong>Atirath Holdings India Limited</strong> · Knowledge Center · <a href="#">Subscribe to Newsletter</a> · <a href="#">Download Resources</a></p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919553774933?text=Hello%20Atirath%2C%20I'm%20interested%20in%20learning%20more%20about%20CBG%20and%20Napier%20Grass%20cultivation." class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Comprehensive Content Data
+        const articles = [
+            {
+                id: 1,
+                title: "SATAT 2.0: What the New CBG Policy Means for India",
+                date: "March 15, 2026",
+                readTime: "5 min read",
+                excerpt: "The Government of India's expanded CBG incentive scheme aims to accelerate the establishment of 5,000 plants by 2030. Here's what farmers and investors need to know about the new policy framework and its implications for the renewable energy sector.",
+                image: "https://images.unsplash.com/photo-1473341304170-971d6fa7b15a?w=600&h=400&fit=crop",
+                content: "<div style='padding:2rem;'><h2 style='font-family:Cormorant Garamond; font-size:2rem; margin-bottom:1rem;'>SATAT 2.0: A Game Changer for India's Bioenergy Sector</h2><img src='https://images.unsplash.com/photo-1473341304170-971d6fa7b15a?w=800&h=400&fit=crop' style='width:100%; border-radius:16px; margin:1rem 0;'><p style='margin-top:1rem; line-height:1.6;'>The Sustainable Alternative Towards Affordable Transportation (SATAT) scheme, launched in 2018, has been a cornerstone of India's bioenergy policy. With the introduction of SATAT 2.0, the government has significantly expanded incentives for CBG producers, including enhanced viability gap funding, priority sector lending, and streamlined clearance processes.</p><p style='margin-top:1rem; line-height:1.6;'>Key highlights include: increased financial support for small and marginal farmers, dedicated CBG corridors for transportation, and mandatory blending targets that create guaranteed demand. This policy shift is expected to attract ₹15,000 crore in new investments by 2028.</p></div>"
+            },
+            {
+                id: 2,
+                title: "Why Napier Grass is Called 'Green Gold' for Farmers",
+                date: "February 28, 2026",
+                readTime: "4 min read",
+                excerpt: "With yields 4x higher than traditional crops and minimal water requirements, Napier Grass is transforming rural livelihoods across Telangana and Andhra Pradesh, creating sustainable income streams for thousands of farmers.",
+                image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&h=400&fit=crop",
+                content: "<div style='padding:2rem;'><h2 style='font-family:Cormorant Garamond; font-size:2rem; margin-bottom:1rem;'>The Rise of Napier Grass in Indian Agriculture</h2><img src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=400&fit=crop' style='width:100%; border-radius:16px; margin:1rem 0;'><p style='margin-top:1rem; line-height:1.6;'>Napier Grass (Pennisetum purpureum), also known as elephant grass, has emerged as the preferred feedstock for CBG production due to its high biomass yield, perennial nature, and low input requirements. Farmers report 2-3x increase in annual income compared to traditional crops like cotton or paddy.</p></div>"
+            },
+            {
+                id: 3,
+                title: "CBG Blending Obligation: A ₹5,000 Cr Market Opportunity",
+                date: "February 10, 2026",
+                readTime: "6 min read",
+                excerpt: "The mandatory CBG blending mandate creates guaranteed demand, opening up significant investment opportunities in the sector and positioning India as a global leader in bioenergy adoption.",
+                image: "https://images.unsplash.com/photo-1569163139599-0f4517e36f51?w=600&h=400&fit=crop",
+                content: "<div style='padding:2rem;'><h2 style='font-family:Cormorant Garamond; font-size:2rem; margin-bottom:1rem;'>Understanding the CBG Blending Obligation</h2><img src='https://images.unsplash.com/photo-1569163139599-0f4517e36f51?w=800&h=400&fit=crop' style='width:100%; border-radius:16px; margin:1rem 0;'><p style='margin-top:1rem; line-height:1.6;'>The Ministry of Petroleum and Natural Gas has mandated that City Gas Distribution companies must blend 1% CBG by FY 2025-26, increasing to 5% by FY 2028-29. This creates a guaranteed market for CBG producers and opens up a ₹5,000 crore annual market opportunity.</p></div>"
+            },
+            {
+                id: 4,
+                title: "The Circular Economy of CBG: From Waste to Wealth",
+                date: "January 20, 2026",
+                readTime: "5 min read",
+                excerpt: "How CBG plants are creating value from agricultural residue while reducing emissions and improving soil health through bio-slurry utilization.",
+                image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600&h=400&fit=crop",
+                content: "<div style='padding:2rem;'><h2 style='font-family:Cormorant Garamond; font-size:2rem; margin-bottom:1rem;'>Closing the Loop with Bio-Slurry</h2><img src='https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&h=400&fit=crop' style='width:100%; border-radius:16px; margin:1rem 0;'><p style='margin-top:1rem; line-height:1.6;'>One of the most underappreciated benefits of CBG production is the bio-slurry byproduct, which serves as a high-quality organic fertilizer, reducing dependence on synthetic inputs by up to 30% while improving soil health.</p></div>"
+            }
+        ];
+
+        const caseStudies = [
+            {
+                id: 1,
+                title: "From 2 Acres to 15 Acres: The Venkateswarlu Story",
+                location: "Guntur, Andhra Pradesh",
+                yield: "42 tons/acre/year",
+                income: "₹3,20,000/year",
+                image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&h=400&fit=crop",
+                excerpt: "How one farmer's partnership with Atirath transformed his land and his family's future, inspiring neighboring farmers to adopt sustainable cultivation practices.",
+                content: "<div style='padding:2rem;'><h2 style='font-family:Cormorant Garamond; font-size:2rem; margin-bottom:1rem;'>Case Study: S. Venkateswarlu</h2><img src='https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&h=400&fit=crop' style='width:100%; border-radius:16px; margin:1rem 0;'><p style='margin-top:1rem; line-height:1.6;'>When Venkateswarlu first heard about Napier Grass cultivation, he was skeptical. Today, he cultivates 15 acres of Napier Grass, supplying to Atirath's CBG facility and earning over ₹3 lakh annually.</p></div>"
+            },
+            {
+                id: 2,
+                title: "Water-Scarce Region Finds Hope with Drip-Irrigated Napier",
+                location: "Mahabubnagar, Telangana",
+                yield: "38 tons/acre/year",
+                income: "₹2,80,000/year",
+                image: "https://images.unsplash.com/photo-1532302916216-d3a3b7e7a7e9?w=600&h=400&fit=crop",
+                excerpt: "In a region with limited groundwater, drip irrigation and Napier Grass have proven to be a winning combination for sustainable agriculture.",
+                content: "<div style='padding:2rem;'><h2 style='font-family:Cormorant Garamond; font-size:2rem; margin-bottom:1rem;'>Case Study: K. Ramakrishna Reddy</h2><img src='https://images.unsplash.com/photo-1532302916216-d3a3b7e7a7e9?w=800&h=400&fit=crop' style='width:100%; border-radius:16px; margin:1rem 0;'><p style='margin-top:1rem; line-height:1.6;'>Mahabubnagar faces acute water scarcity, but with Atirath's technical support and drip irrigation systems, Ramakrishna has successfully cultivated Napier Grass.</p></div>"
+            },
+            {
+                id: 3,
+                title: "Women Farmer Collective Doubles Income in Two Years",
+                location: "Nalgonda, Telangana",
+                yield: "45 tons/acre/year",
+                income: "₹3,50,000/year",
+                image: "https://images.unsplash.com/photo-1574799100005-1a2b1d1a9f5f?w=600&h=400&fit=crop",
+                excerpt: "A self-help group of 25 women farmers adopted Napier Grass cultivation with remarkable results, demonstrating the power of collective action.",
+                content: "<div style='padding:2rem;'><h2 style='font-family:Cormorant Garamond; font-size:2rem; margin-bottom:1rem;'>Case Study: Nalgonda Women Farmer Collective</h2><img src='https://images.unsplash.com/photo-1574799100005-1a2b1d1a9f5f?w=800&h=400&fit=crop' style='width:100%; border-radius:16px; margin:1rem 0;'><p style='margin-top:1rem; line-height:1.6;'>Twenty-five women farmers came together to pool their land and resources, cultivating Napier Grass under Atirath's guidance. Within two years, their collective income doubled.</p></div>"
+            }
+        ];
+
+        const videos = [
+            {
+                id: 1,
+                title: "From Napier Grass to CBG: The Complete Process",
+                duration: "8:24",
+                thumbnail: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600&h=400&fit=crop",
+                description: "A step-by-step walkthrough of how agricultural biomass becomes clean fuel.",
+                content: "<div style='padding:2rem;'><h2 style='font-family:Cormorant Garamond; font-size:2rem; margin-bottom:1rem;'>From Napier Grass to CBG</h2><div style='background:linear-gradient(135deg, #e8f5e5, #d4e8cf); padding:60px; text-align:center; border-radius:20px;'><i class='fas fa-play-circle' style='font-size:5rem; color:#2E9E1F;'></i><p style='margin-top:1rem;'>Video: Complete CBG Production Process Animation</p></div></div>"
+            },
+            {
+                id: 2,
+                title: "Drip Irrigation for Napier Grass: Best Practices",
+                duration: "6:12",
+                thumbnail: "https://images.unsplash.com/photo-1620139157616-b41f4b3c5c4f?w=600&h=400&fit=crop",
+                description: "Expert guidance on water-efficient cultivation techniques.",
+                content: "<div style='padding:2rem;'><h2 style='font-family:Cormorant Garamond; font-size:2rem; margin-bottom:1rem;'>Drip Irrigation Best Practices</h2><div style='background:linear-gradient(135deg, #e8f5e5, #d4e8cf); padding:60px; text-align:center; border-radius:20px;'><i class='fas fa-play-circle' style='font-size:5rem; color:#2E9E1F;'></i><p style='margin-top:1rem;'>Video: Drip Irrigation Tutorial for Napier Grass</p></div></div>"
+            },
+            {
+                id: 3,
+                title: "Farmer Success Story: How Napier Changed Our Lives",
+                duration: "4:45",
+                thumbnail: "https://images.unsplash.com/photo-1591382386627-349b692688ff?w=600&h=400&fit=crop",
+                description: "Real stories from farmers who partnered with Atirath.",
+                content: "<div style='padding:2rem;'><h2 style='font-family:Cormorant Garamond; font-size:2rem; margin-bottom:1rem;'>Farmer Testimonials</h2><div style='background:linear-gradient(135deg, #e8f5e5, #d4e8cf); padding:60px; text-align:center; border-radius:20px;'><i class='fas fa-play-circle' style='font-size:5rem; color:#2E9E1F;'></i><p style='margin-top:1rem;'>Video: Farmer Interviews & Success Stories</p></div></div>"
+            },
+            {
+                id: 4,
+                title: "Understanding the SATAT Scheme",
+                duration: "5:30",
+                thumbnail: "https://images.unsplash.com/photo-1569163139599-0f4517e36f51?w=600&h=400&fit=crop",
+                description: "An explainer on India's flagship CBG policy.",
+                content: "<div style='padding:2rem;'><h2 style='font-family:Cormorant Garamond; font-size:2rem; margin-bottom:1rem;'>SATAT Scheme Explained</h2><div style='background:linear-gradient(135deg, #e8f5e5, #d4e8cf); padding:60px; text-align:center; border-radius:20px;'><i class='fas fa-play-circle' style='font-size:5rem; color:#2E9E1F;'></i><p style='margin-top:1rem;'>Video: SATAT Policy Explainer</p></div></div>"
+            }
+        ];
+
+        const infographics = [
+            { id: 1, title: "Carbon Offset", value: "78%", icon: "fas fa-cloud-sun", description: "Net GHG reduction when using CBG instead of diesel/CNG", detail: "vs. fossil fuels" },
+            { id: 2, title: "Water Savings", value: "75%", icon: "fas fa-tint", description: "Reduction in water consumption vs. flood irrigation", detail: "with drip irrigation" },
+            { id: 3, title: "Conversion Efficiency", value: "87%", icon: "fas fa-chart-line", description: "Gas yield from Napier Grass feedstock", detail: "biomass to CBG" },
+            { id: 4, title: "Farmer Income Increase", value: "2-3x", icon: "fas fa-rupee-sign", description: "Higher earnings compared to traditional crops", detail: "annual income" },
+            { id: 5, title: "Annual CO₂ Offset", value: "1.5L+", icon: "fas fa-cloud", description: "Tons of CO₂ avoided annually", detail: "at full capacity" },
+            { id: 6, title: "Rural Employment", value: "10K+", icon: "fas fa-users", description: "Direct and indirect jobs created", detail: "across both states" }
+        ];
+
+        // Render Functions
+        function renderArticles(filtered = articles) {
+            const grid = document.getElementById('articlesGrid');
+            grid.innerHTML = filtered.map(article => `
+                <div class="article-card" onclick="openModal('${article.content.replace(/'/g, "\\'")}', '${article.title}')">
+                    <div class="article-image" style="background-image: url('${article.image}');">
+                        <span class="article-category-badge">Article</span>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta"><i class="far fa-calendar-alt"></i> ${article.date} · <i class="far fa-clock"></i> ${article.readTime}</div>
+                        <h3 class="article-title">${article.title}</h3>
+                        <p class="article-excerpt">${article.excerpt.substring(0, 120)}${article.excerpt.length > 120 ? '...' : ''}</p>
+                        <span class="read-more">Read full article <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderCaseStudies() {
+            const grid = document.getElementById('caseGrid');
+            grid.innerHTML = caseStudies.map(cs => `
+                <div class="case-card" onclick="openModal('${cs.content.replace(/'/g, "\\'")}', '${cs.title}')">
+                    <div class="case-image" style="background-image: url('${cs.image}');"></div>
+                    <div class="case-content">
+                        <h3 style="font-family: 'Cormorant Garamond'; font-size: var(--fs-xl); margin-bottom: 0.5rem;">${cs.title}</h3>
+                        <p style="color: var(--gray-text); font-size: var(--fs-sm);"><i class="fas fa-map-marker-alt"></i> ${cs.location}</p>
+                        <div class="case-stats">
+                            <span class="case-stat"><i class="fas fa-chart-line"></i> ${cs.yield}</span>
+                            <span class="case-stat"><i class="fas fa-rupee-sign"></i> ${cs.income}</span>
+                        </div>
+                        <p style="color: var(--gray-text); font-size: var(--fs-sm); margin-top: 0.5rem;">${cs.excerpt.substring(0, 100)}${cs.excerpt.length > 100 ? '...' : ''}</p>
+                        <span class="read-more" style="margin-top: 1rem; display: inline-block;">Read case study →</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderVideos() {
+            const grid = document.getElementById('videoGrid');
+            grid.innerHTML = videos.map(video => `
+                <div class="video-card" onclick="openModal('${video.content.replace(/'/g, "\\'")}', '${video.title}')">
+                    <div class="video-thumbnail" style="background-image: url('${video.thumbnail}');">
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 style="font-weight: 600; font-size: var(--fs-base);">${video.title}</h4>
+                        <div class="video-duration"><i class="far fa-clock"></i> ${video.duration}</div>
+                        <p style="font-size: var(--fs-xs); color: var(--gray-text); margin-top: 0.5rem;">${video.description}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderInfographics() {
+            const grid = document.getElementById('infographicGrid');
+            grid.innerHTML = infographics.map(inf => `
+                <div class="infographic-card">
+                    <div class="infographic-icon"><i class="${inf.icon}"></i></div>
+                    <div class="infographic-value">${inf.value}</div>
+                    <h4 style="margin: 0.5rem 0; font-weight: 600;">${inf.title}</h4>
+                    <p style="font-size: var(--fs-xs); color: var(--gray-text);">${inf.description}</p>
+                    <p style="font-size: var(--fs-xs); color: var(--green); margin-top: 0.5rem; font-weight: 500;">${inf.detail}</p>
+                </div>
+            `).join('');
+        }
+
+        // Modal Functions
+        window.openModal = function(content, title) {
+            const modal = document.getElementById('modal');
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = content;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        document.querySelector('.modal-close').addEventListener('click', function() {
+            document.getElementById('modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Tab Switching
+        const tabs = document.querySelectorAll('.tab-btn');
+        const sections = {
+            articles: document.getElementById('articles-section'),
+            'case-studies': document.getElementById('case-studies-section'),
+            videos: document.getElementById('videos-section'),
+            infographics: document.getElementById('infographics-section')
+        };
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                const category = this.dataset.category;
+                Object.keys(sections).forEach(key => {
+                    sections[key].style.display = key === category || category === 'all' ? 'block' : 'none';
+                });
+                if (category === 'all') {
+                    Object.keys(sections).forEach(key => sections[key].style.display = 'block');
+                }
+            });
+        });
+
+        // Search Function
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            const filtered = articles.filter(a => 
+                a.title.toLowerCase().includes(query) || 
+                a.excerpt.toLowerCase().includes(query)
+            );
+            renderArticles(filtered);
+        });
+
+        // Initial Render
+        renderArticles();
+        renderCaseStudies();
+        renderVideos();
+        renderInfographics();
+    </script>
+</body>
+</html>
