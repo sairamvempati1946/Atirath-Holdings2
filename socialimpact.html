@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+    <title>Atirath Holdings · Social Impact & Investment | CBG Project Benefits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #ffffff;
+            color: #1a2a2e;
+            line-height: 1.5;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        :root {
+            --green: #2E9E1F;
+            --green-dark: #1a6b12;
+            --green-light: #4abe38;
+            --green-pale: #e8f5e5;
+            --green-muted: #d4e8cf;
+            --gray-light: #f8faf7;
+            --gray-bg: #f5f7f5;
+            --gray-text: #5a6b58;
+            --dark: #1a2a2e;
+            --dark-bg: #0f2a1a;
+            --off-white: #fefef7;
+            --border-light: #e2e8e2;
+            --orange: #f5a623;
+            --orange-light: #fff4e6;
+            --blue: #2c7da0;
+            
+            --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.85rem);
+            --fs-sm: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
+            --fs-base: clamp(1rem, 0.94rem + 0.38vw, 1.15rem);
+            --fs-md: clamp(1.1rem, 1rem + 0.55vw, 1.35rem);
+            --fs-lg: clamp(1.3rem, 1.15rem + 0.9vw, 1.7rem);
+            --fs-xl: clamp(1.6rem, 1.35rem + 1.4vw, 2.3rem);
+            --fs-2xl: clamp(2rem, 1.7rem + 2vw, 3rem);
+            --fs-3xl: clamp(2.4rem, 2rem + 2.8vw, 3.8rem);
+            --fs-4xl: clamp(3rem, 2.4rem + 3.8vw, 5rem);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(20px, 4vw, 60px);
+        }
+
+        section {
+            padding: clamp(2rem, 5vw, 4rem) 0;
+        }
+
+        .section-tag {
+            font-size: var(--fs-sm);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--green);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 32px;
+            height: 2px;
+            background: var(--green);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-3xl);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            font-size: var(--fs-md);
+            color: var(--gray-text);
+            max-width: 680px;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 5px clamp(20px, 5vw, 60px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(46, 158, 31, 0.1);
+            height: 70px;
+        }
+
+        .nav-logo img {
+            width: clamp(175px, 3.5vw, 46px);
+            height: auto;
+            display: block;
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: var(--green);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: var(--fs-sm);
+            border: 1px solid var(--green-pale);
+            padding: 8px 18px;
+            border-radius: 40px;
+            transition: 0.2s;
+            background: white;
+        }
+
+        .back-link a:hover {
+            background: var(--green-pale);
+            border-color: var(--green);
+            transform: translateX(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f2a1a 0%, #1a4524 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 80%, rgba(46, 158, 31, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 100px;
+            padding: 0.4rem 1.2rem;
+            margin-bottom: 1.5rem;
+            font-size: var(--fs-xs);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-badge i {
+            font-size: 0.7rem;
+            color: var(--green-light);
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-4xl);
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 span {
+            color: var(--green-light);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: var(--fs-md);
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 520px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            flex: 0.8;
+            min-width: 260px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 1.2rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(46, 158, 31, 0.15);
+            border-color: var(--green-light);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-2xl);
+            font-weight: 600;
+            color: var(--green-light);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: var(--fs-xs);
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+        }
+
+        /* Impact Grid */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .impact-card {
+            background: white;
+            border-radius: 24px;
+            border: 1px solid var(--border-light);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+            border-color: var(--green);
+        }
+
+        .impact-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--green-pale);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+        }
+
+        .impact-icon i {
+            font-size: 2rem;
+            color: var(--green);
+        }
+
+        .impact-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-2xl);
+            font-weight: 700;
+            color: var(--green-dark);
+        }
+
+        .impact-title {
+            font-size: var(--fs-lg);
+            font-weight: 600;
+            margin: 0.5rem 0;
+            color: var(--dark);
+        }
+
+        .impact-desc {
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        /* Two Column Layout */
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 24px;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            transition: all 0.25s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+            border-color: var(--green-pale);
+        }
+
+        .info-card-header {
+            padding: 1.5rem 1.8rem 0.5rem 1.8rem;
+            border-bottom: 2px solid var(--green-pale);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .info-card-header i {
+            font-size: 1.8rem;
+            color: var(--green);
+        }
+
+        .info-card-header h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-xl);
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 1.2rem 1.8rem 1.5rem 1.8rem;
+        }
+
+        .info-list li {
+            display: flex;
+            gap: 12px;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #f0f2ef;
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list li i {
+            color: var(--green);
+            width: 22px;
+            margin-top: 2px;
+        }
+
+        /* Investment Cards - Same Alignment */
+        .investment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .investment-card {
+            background: white;
+            border-radius: 24px;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .investment-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
+            border-color: var(--green);
+        }
+
+        .investment-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--green);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: var(--fs-xs);
+            font-weight: 600;
+        }
+
+        .investment-icon {
+            background: var(--green-pale);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .investment-icon i {
+            font-size: 3rem;
+            color: var(--green);
+        }
+
+        .investment-content {
+            padding: 1.8rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .investment-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-xl);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .investment-features {
+            margin: 0 0 1.5rem 0;
+            list-style: none;
+            flex: 1;
+        }
+
+        .investment-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+        }
+
+        .investment-features li i {
+            color: var(--green);
+            width: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* BUTTONS - SAME ALIGNMENT */
+        .investment-cta {
+            margin-top: auto;
+            padding-top: 1rem;
+        }
+
+        .btn-invest {
+            display: block;
+            width: 100%;
+            background: var(--green);
+            color: white;
+            text-decoration: none;
+            padding: 0.9rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .btn-invest:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Village Adoption Section */
+        .village-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .village-card {
+            background: var(--off-white);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: all 0.2s;
+        }
+
+        .village-card:hover {
+            border-color: var(--green);
+            transform: translateY(-3px);
+        }
+
+        .village-card i {
+            font-size: 2.5rem;
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .village-card h4 {
+            font-weight: 600;
+            font-size: var(--fs-base);
+            margin-bottom: 0.5rem;
+        }
+
+        .village-card p {
+            font-size: var(--fs-xs);
+            color: var(--gray-text);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--green-pale);
+            border-radius: 24px;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stat-item .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-2xl);
+            font-weight: 600;
+            color: var(--green-dark);
+        }
+
+        .stat-item .stat-label {
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+            text-transform: none;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+            padding: 1.5rem;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: var(--fs-base);
+            color: var(--green-dark);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-answer {
+            font-size: var(--fs-sm);
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        /* Quote Block */
+        .quote-block {
+            background: var(--gray-bg);
+            border-radius: 32px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 2rem 0;
+            border-left: 4px solid var(--green);
+        }
+
+        .quote-block i {
+            font-size: 2.5rem;
+            color: var(--green);
+            opacity: 0.5;
+            margin-bottom: 1rem;
+        }
+
+        .quote-block p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--fs-xl);
+            font-weight: 400;
+            color: var(--dark);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            padding: 2rem clamp(20px, 4vw, 60px);
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            text-align: center;
+            font-size: var(--fs-xs);
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .footer-content a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+        }
+
+        .footer-content a:hover {
+            color: var(--green-light);
+        }
+
+        /* WhatsApp Float */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: #25D366;
+            color: #fff;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.05);
+            background: #20b859;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .two-col-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-stats {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <img src="./logo.svg" alt="Atirath"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span style="font-family:'Cormorant Garamond'; font-size:1.5rem; color:var(--green); display:none;">Atirath</span>
+        </div>
+        <div class="back-link">
+            <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>SOCIAL IMPACT & INVESTMENT</span>
+                </div>
+                <h1>Creating <span>Social Value</span> While Building <span>Wealth</span></h1>
+                <p>Atirath Holdings' CBG projects generate measurable social impact while offering attractive investment opportunities for forward-thinking investors.</p>
+                <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                    <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.9rem; border-radius: 40px;"><i class="fas fa-users"></i> 10K+ Jobs</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.9rem; border-radius: 40px;"><i class="fas fa-leaf"></i> Carbon Reduction</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.9rem; border-radius: 40px;"><i class="fas fa-chart-line"></i> Assured Returns</span>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Rural Jobs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">40,000</div>
+                    <div class="stat-label">Acres Cultivated</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100</div>
+                    <div class="stat-label">Villages Adopted</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">78%</div>
+                    <div class="stat-label">Carbon Reduction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Social Impact Highlights -->
+        <section class="reveal">
+            <div class="section-tag">Social Advantages</div>
+            <h2 class="section-title">CBG Project: Social Impact</h2>
+            <p class="section-subtitle">Our compressed bio-gas projects create lasting positive change in rural communities.</p>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="impact-number">10,000+</div>
+                    <div class="impact-title">Rural Employment</div>
+                    <div class="impact-desc">Direct and indirect jobs created across Telangana and Andhra Pradesh in plant operations, farming, logistics, and support services.</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-cloud-sun"></i></div>
+                    <div class="impact-number">78%</div>
+                    <div class="impact-title">Carbon Reduction</div>
+                    <div class="impact-desc">Net greenhouse gas reduction when replacing diesel/CNG with CBG — contributing to India's net-zero targets.</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-tractor"></i></div>
+                    <div class="impact-number">40,000</div>
+                    <div class="impact-title">Barren Land Revived</div>
+                    <div class="impact-desc">Previously unproductive land brought under Napier Grass cultivation, generating farmer income and improving soil health.</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="impact-number">₹1,500+ Cr</div>
+                    <div class="impact-title">Foreign Exchange Saved</div>
+                    <div class="impact-desc">Annual reduction in fossil fuel imports through indigenous CBG production under Make in India initiative.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Village Adoption Program -->
+        <section class="reveal" style="background: var(--green-pale); border-radius: 32px; margin: 1rem 0; padding: 2rem;">
+            <div class="section-tag">Community Development</div>
+            <h2 class="section-title">100 Villages Adoption Program</h2>
+            <p class="section-subtitle">Holistic development of rural communities through sustainable interventions.</p>
+
+            <div class="village-grid">
+                <div class="village-card">
+                    <i class="fas fa-school"></i>
+                    <h4>Education</h4>
+                    <p>Digital learning centers, scholarships, and school infrastructure improvement in adopted villages</p>
+                </div>
+                <div class="village-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h4>Healthcare</h4>
+                    <p>Mobile health clinics, regular check-up camps, and health awareness programs</p>
+                </div>
+                <div class="village-card">
+                    <i class="fas fa-tint"></i>
+                    <h4>Water & Sanitation</h4>
+                    <p>Borewell recharge, RO water plants, and toilet construction in rural areas</p>
+                </div>
+                <div class="village-card">
+                    <i class="fas fa-female"></i>
+                    <h4>Women Empowerment</h4>
+                    <p>Self-help groups, skill training, and micro-enterprise development</p>
+                </div>
+                <div class="village-card">
+                    <i class="fas fa-chalkboard-user"></i>
+                    <h4>Skill Development</h4>
+                    <p>Vocational training in farming techniques, equipment operation, and small business management</p>
+                </div>
+                <div class="village-card">
+                    <i class="fas fa-solar-panel"></i>
+                    <h4>Clean Energy Access</h4>
+                    <p>Solar lighting in common areas and clean cooking solutions for rural households</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- National Contribution -->
+        <section class="reveal">
+            <div class="two-col-grid">
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-flag-india"></i>
+                        <h3>Make in India Initiative</h3>
+                    </div>
+                    <ul class="info-list">
+                        <li><i class="fas fa-check-circle"></i> <span><strong>Indigenous Technology:</strong> CBG plants using locally manufactured equipment and Indian engineering</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span><strong>Domestic Feedstock:</strong> 100% locally sourced agricultural residue and Napier Grass</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span><strong>Indian Workforce:</strong> Complete employment of Indian nationals across all operations</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span><strong>Atmanirbhar Bharat:</strong> Reducing dependence on imported fossil fuels</span></li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Import Reduction Impact</h3>
+                    </div>
+                    <ul class="info-list">
+                        <li><i class="fas fa-oil-can"></i> <span><strong>Fossil Fuel Substitution:</strong> Each plant displaces 7,000+ liters of diesel/CNG daily</span></li>
+                        <li><i class="fas fa-rupee-sign"></i> <span><strong>Foreign Exchange Saving:</strong> ~₹1,500 crore annually at full capacity</span></li>
+                        <li><i class="fas fa-chart-line"></i> <span><strong>Import Reduction Target:</strong> Contributing to India's goal of 10% reduction in gas imports by 2030</span></li>
+                        <li><i class="fas fa-leaf"></i> <span><strong>Energy Security:</strong> Enhancing India's energy independence through renewable domestic production</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment Opportunities - Cards with Same Alignment Buttons -->
+        <section class="reveal">
+            <div class="section-tag">Grow Your Wealth</div>
+            <h2 class="section-title">Investment Opportunities</h2>
+            <p class="section-subtitle">Multiple pathways to participate in India's green energy revolution with attractive returns.</p>
+
+            <div class="investment-grid">
+                <!-- Card 1: Direct Investment -->
+                <div class="investment-card">
+                    <div class="investment-badge">Option 1</div>
+                    <div class="investment-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="investment-content">
+                        <h3 class="investment-title">Direct Investment in CBG Projects</h3>
+                        <ul class="investment-features">
+                            <li><i class="fas fa-check"></i> Equity participation in CBG plants</li>
+                            <li><i class="fas fa-check"></i> Assured returns through long-term offtake agreements</li>
+                            <li><i class="fas fa-check"></i> Government-backed SATAT scheme benefits</li>
+                            <li><i class="fas fa-check"></i> Transparent quarterly reporting</li>
+                            <li><i class="fas fa-check"></i> Exit options after 5 years</li>
+                        </ul>
+                        <div class="investment-cta">
+                            <a href="#" class="btn-invest" onclick="alert('Request Details - Direct Investment. Please WhatsApp us at +91 9396699222'); return false;">Request Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Buy Land + Assured Lease -->
+                <div class="investment-card">
+                    <div class="investment-badge">Option 2</div>
+                    <div class="investment-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="investment-content">
+                        <h3 class="investment-title">Buy Land + Assured Lease</h3>
+                        <ul class="investment-features">
+                            <li><i class="fas fa-check"></i> Purchase agricultural land (minimum 1 acre)</li>
+                            <li><i class="fas fa-check"></i> <strong>15 years assured lease amount</strong></li>
+                            <li><i class="fas fa-check"></i> Land value appreciation benefit</li>
+                            <li><i class="fas fa-check"></i> Complete land ownership with you</li>
+                            <li><i class="fas fa-check"></i> Lease renewable after 15 years</li>
+                        </ul>
+                        <div class="investment-cta">
+                            <a href="#" class="btn-invest" onclick="alert('Check Land Availability. Please WhatsApp us at +91 9396699222'); return false;">Check Land Availability →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Self Agriculture + Buyback -->
+                <div class="investment-card">
+                    <div class="investment-badge">Option 3</div>
+                    <div class="investment-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="investment-content">
+                        <h3 class="investment-title">Self Agriculture + Buyback</h3>
+                        <ul class="investment-features">
+                            <li><i class="fas fa-check"></i> Cultivate Napier Grass on your own land</li>
+                            <li><i class="fas fa-check"></i> <strong>Guaranteed buyback agreement</strong></li>
+                            <li><i class="fas fa-check"></i> Free technical training & support</li>
+                            <li><i class="fas fa-check"></i> Drip irrigation guidance provided</li>
+                            <li><i class="fas fa-check"></i> 3-4 harvests per year → steady income</li>
+                        </ul>
+                        <div class="investment-cta">
+                            <a href="#" class="btn-invest" onclick="alert('Register for Buyback - Farmer Partnership. Please WhatsApp us at +91 9396699222'); return false;">Register for Buyback →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investment Summary -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-number">₹8,000+ Cr</div>
+                    <div class="stat-label">Total Project Investment</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15 Years</div>
+                    <div class="stat-label">Assured Lease Period</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2x-3x</div>
+                    <div class="stat-label">Farmer Income Increase</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">SATAT</div>
+                    <div class="stat-label">Govt. Backed Scheme</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="reveal" style="background: var(--gray-bg); border-radius: 32px; padding: 2rem;">
+            <div class="section-tag">Common Questions</div>
+            <h2 class="section-title">Investment FAQs</h2>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-rupee-sign"></i> Minimum investment amount?</div>
+                    <div class="faq-answer">Direct investment starting from ₹5 lakh. Land investment from ₹3 lakh per acre. Self agriculture requires minimum 0.5 acre of land.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-chart-line"></i> What are expected returns?</div>
+                    <div class="faq-answer">12-15% IRR for direct investment. Land lease yields 8-10% annual return + land appreciation (estimated 7-10% p.a.). Buyback provides 2-3x income vs traditional crops.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-shield-alt"></i> Is my investment secured?</div>
+                    <div class="faq-answer">Land investment gives you absolute ownership. Buyback agreement is legally binding with 15-year contract. Direct investment has government SATAT scheme backing.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-file-contract"></i> Contract duration?</div>
+                    <div class="faq-answer">Land lease: 15 years (renewable). Buyback agreement: 5-15 years. Direct investment: Flexible exit after 5 years.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-tractor"></i> Who manages the farming?</div>
+                    <div class="faq-answer">For land lease option: Atirath manages complete cultivation. For self agriculture: You manage with our technical support and training.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-tag"></i> Price assurance?</div>
+                    <div class="faq-answer">Buyback agreement has fixed minimum price with annual escalation. Land lease has fixed annual lease amount with 5% increase every 3 years.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <div class="quote-block reveal">
+            <i class="fas fa-handshake"></i>
+            <p>"Invest in India's green future while creating lasting social impact — where your returns and rural prosperity grow together."</p>
+            <div style="margin-top: 1.5rem;">
+                <a href="#" class="btn-invest" style="display: inline-block; width: auto; padding: 0.8rem 2rem; background: var(--green); color: white; text-decoration: none; border-radius: 40px; margin-right: 1rem;" onclick="alert('Please WhatsApp us at +91 9396699222 or email admin@atirathholdings.com'); return false;">
+                    <i class="fas fa-phone-alt"></i> Schedule Investment Call
+                </a>
+                <a href="#" class="btn-outline" style="display: inline-block; padding: 0.8rem 2rem; background: transparent; color: var(--green); border: 2px solid var(--green); text-decoration: none; border-radius: 40px;" onclick="alert('Downloading investment brochure...'); return false;">
+                    <i class="fas fa-download"></i> Download Brochure
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 <strong>Atirath Holdings India Limited</strong> · Social Impact & Investment · <a href="#">Privacy Policy</a> · <a href="#">Contact Investment Desk</a></p>
+            <p style="margin-top: 0.5rem;">Creating wealth. Creating impact. Creating a sustainable future.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919396699222?text=Hello%20Atirath%2C%20I'm%20interested%20in%20the%20investment%20opportunities%20in%20your%20CBG%20projects.%20Please%20share%20more%20details." class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Reveal Animation -->
+    <script>
+        (function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.08 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        })();
+    </script>
+</body>
+</html>
